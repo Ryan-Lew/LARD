@@ -1,0 +1,14 @@
+{
+    "DataBase": {
+        "port": "3306",
+        "host": "127.0.0.1",
+        "database": "infomgr",
+        "user": "jz",
+        "password": "jz"
+    },
+    "TTM": {
+        "port": "com4",
+        "baudrate": "115200",
+        "databit": "8"
+    }
+}

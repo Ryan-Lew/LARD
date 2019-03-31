@@ -1,0 +1,959 @@
+
+QMainWindow{
+    background-image: url(":/src/background-total.png");
+}
+
+
+QWidget#video_control1 {
+	background-image: url(:/src/bg-control.png);
+}
+QWidget#video_control2 {
+	background-image: url(:/src/bg-control.png);
+}
+QWidget#video1 {
+	background-image: url(:/src/bg-vedio-01.png);
+}
+QWidget#video2 {
+	background-image: url(:/src/bg-vedio-01.png);
+}
+
+
+QWidget#tranking_control {
+	background-image: url(:/src/bg-controlpanel.png);
+}
+
+QLabel {
+	color: rgb(18, 161, 73);
+}
+
+
+QPushButton#control1_aperture_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_aperture_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control1_aperture_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#control1_focus_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_focus_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control1_focus_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#control1_zoom_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_zoom_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control1_zoom_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+QPushButton#control1_aperture_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_aperture_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+	
+}
+QPushButton#control1_aperture_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#control1_focus_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_focus_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+}
+QPushButton#control1_focus_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#control1_zoom_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control1_zoom_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+	
+}
+QPushButton#control1_zoom_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+QWidget#pt_control1{
+	background-image: url(:/src/bg-directionkey.png);
+}
+
+
+QPushButton#pt_control1_bottom{
+	background-image: url(:/src/BTN-arrowdown-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control1_bottom:pressed{
+	background-image: url(:/src/BTN-arrowdown-click.png);
+	border-style:inset;
+}
+
+QPushButton#pt_control1_left{
+	background-image: url(:/src/BTN-arrowleft-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control1_left:pressed{
+	background-image: url(:/src/BTN-arrowleft-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control1_right{
+	background-image: url(:/src/BTN-arrowright-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control1_right:pressed{
+	background-image: url(:/src/BTN-arrowright-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control1_top{
+	background-image: url(:/src/BTN-arrowup-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control1_top:pressed{
+	background-image: url(:/src/BTN-arrowup-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control1_enter{
+	background-image: url(:/src/BTN-enter-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control1_enter:pressed{
+	background-image: url(:/src/BTN-enter-hover.png);
+	border-style:inset;
+}
+
+
+QPushButton#control1_auto{
+	background-image: url(:/src/BTN-auto-off.png);
+	border-style:none;
+}
+
+QPushButton#control1_auto:pressed{
+	background-image: url(:/src/BTN-auto-on.png);
+	border-style:inset;
+}
+QPushButton#control1_auto:checked{
+	background-image: url(:/src/BTN-auto-on.png);
+	border-style:inset;
+}
+QSlider#control1_slider::add-page:Horizontal{     
+	background-color: rgb(30, 31, 34);
+	border-style: outset; 
+	border-radius: 3px; 
+	height:6px;
+}
+QSlider#control1_slider::groove:horizontal {
+    height: 7px; 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(143, 182, 58), stop:1 rgb(143, 182, 58));
+    margin: 0px 0px;
+	border-style: outset; 
+	border-radius: 3px; 
+}
+
+QSlider#control1_slider::handle:Horizontal {
+	width  : 16px;
+	height : 8px;
+	border-image: url(:/src/slider.png);
+	margin: 0px 0px; 
+}
+QLabel#label_14 {
+	color:rgb(165, 165, 165);
+	background-color:#3B3D44;
+}
+
+QLabel#label_13 {
+	color:rgb(133, 218, 65);
+	background-color:#3B3D44;
+}
+
+QLabel#label_12 {
+	color:rgb(139, 139, 139);
+	background-color:#3B3D44;
+}
+
+
+QLabel#label_8,QLabel#label_16,QLabel#label_17 {
+	color:rgb(165, 165, 165);
+
+}
+
+QLabel#label_6 {
+	color:rgb(255, 255, 255);
+	font: 12pt "Agency FB";
+}
+
+/*control2*/
+QPushButton#control2_aperture_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_aperture_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control2_aperture_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#control2_focus_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_focus_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control2_focus_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#control2_zoom_plus {
+	background-image: url(:/src/BTN-plus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_zoom_plus:hover {
+	background-image: url(:/src/BTN-plus-hover.png);
+	
+}
+QPushButton#control2_zoom_plus:pressed {
+	background-image: url(:/src/BTN-plus-click.png);
+	border-style:inset;
+}
+
+QPushButton#control2_aperture_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_aperture_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+	
+}
+QPushButton#control2_aperture_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#control2_focus_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_focus_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+}
+QPushButton#control2_focus_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#control2_zoom_reduce {
+	background-image: url(:/src/BTN-minus-normal.png);
+	border-style:outset;
+}
+QPushButton#control2_zoom_reduce:hover {
+	background-image: url(:/src/BTN-minus-hover.png);
+	
+}
+QPushButton#control2_zoom_reduce:pressed {
+	background-image: url(:/src/BTN-minus-click.png);
+	border-style:inset;
+}
+
+
+QWidget#pt_control2{
+	background-image: url(:/src/bg-directionkey.png);
+}
+
+
+QPushButton#pt_control2_bottom{
+	background-image: url(:/src/BTN-arrowdown-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control2_bottom:pressed{
+	background-image: url(:/src/BTN-arrowdown-click.png);
+	border-style:inset;
+}
+
+QPushButton#pt_control2_left{
+	background-image: url(:/src/BTN-arrowleft-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control2_left:pressed{
+	background-image: url(:/src/BTN-arrowleft-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control2_right{
+	background-image: url(:/src/BTN-arrowright-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control2_right:pressed{
+	background-image: url(:/src/BTN-arrowright-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control2_top{
+	background-image: url(:/src/BTN-arrowup-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control2_top:pressed{
+	background-image: url(:/src/BTN-arrowup-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#pt_control2_enter{
+	background-image: url(:/src/BTN-enter-normal.png);
+	border-style:none;
+}
+
+QPushButton#pt_control2_enter:pressed{
+	background-image: url(:/src/BTN-enter-hover.png);
+	border-style:inset;
+}
+
+
+QPushButton#control2_auto{
+	background-image: url(:/src/BTN-auto-off.png);
+	border-style:none;
+}
+
+QPushButton#control2_auto:pressed{
+	background-image: url(:/src/BTN-auto-on.png);
+	border-style:inset;
+}
+QPushButton#control2_auto:checked{
+	background-image: url(:/src/BTN-auto-on.png);
+	border-style:inset;
+}
+QSlider#control2_slider::add-page:Horizontal{     
+	background-color: rgb(30, 31, 34);
+	border-style: outset; 
+	border-radius: 3px; 
+	height:6px;
+}
+QSlider#control2_slider::groove:horizontal {
+    height: 7px; 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(143, 182, 58), stop:1 rgb(143, 182, 58));
+    margin: 0px 0px;
+	border-style: outset; 
+	border-radius: 3px; 
+}
+
+QSlider#control2_slider::handle:Horizontal {
+	width  : 16px;
+	height : 8px;
+	border-image: url(:/src/slider.png);
+	margin: 0px 0px; 
+}
+QLabel#label {
+	color:rgb(165, 165, 165);
+	background-color:#3B3D44;
+}
+
+QLabel#label_2 {
+	color:rgb(133, 218, 65);
+	background-color:#3B3D44;
+}
+
+QLabel#label_3 {
+	color:rgb(139, 139, 139);
+	background-color:#3B3D44;
+}
+
+
+QLabel#label_4,QLabel#label_4,QLabel#label_7 {
+	color:rgb(165, 165, 165);
+
+}
+
+QLabel#label_15 {
+	color:rgb(255, 255, 255);
+	font: 12pt "Agency FB";
+}
+/**/
+QPushButton#replay{
+	background-image: url(:/src/BTN-replay-off.png);
+	border-style:none;
+}
+
+QPushButton#replay:pressed{
+	background-image: url(:/src/BTN-replay-on.png);
+	border-style:inset;
+}
+QPushButton#replay:checked{
+	background-image: url(:/src/BTN-replay-on.png);
+	border-style:inset;
+}
+QWidget#video_control{
+	background-image: url(:/src/BTN-vediocontrol01-panelwithparting.png);
+	border-style:none;
+}
+
+QPushButton#play{
+	background-image: url(:/src/btn-play-click.png);
+	border-style:none;
+}
+
+QPushButton#play:pressed{
+	background-image: url(:/src/BTN-stop-normal.png);
+	border-style:inset;
+}
+QPushButton#play:checked{
+	background-image: url(:/src/btn-stop-normal.png);
+	border-style:inset;
+}
+
+QPushButton#rewind{
+	background-image: url(:/src/btn-rewind-normal.png);
+	border-style:none;
+}
+
+QPushButton#rewind:pressed{
+	background-image: url(:/src/btn-rewind-click.png);
+	border-style:inset;
+}
+QPushButton#rewind:checked{
+	background-image: url(:/src/btn-rewind-click.png);
+	border-style:inset;
+}
+
+QPushButton#framein{
+	background-image: url(:/src/btn-framein-normal.png);
+	border-style:none;
+}
+
+QPushButton#framein:pressed{
+	background-image: url(:/src/btn-framein-hover.png);
+	border-style:inset;
+}
+QPushButton#framein:checked{
+	background-image: url(:/src/btn-framein-hover.png);
+	border-style:inset;
+}
+
+QPushButton#forward{
+	background-image: url(:/src/btn-forward-normal.png);
+	border-style:none;
+}
+QPushButton#forward:pressed{
+	background-image: url(:/src/btn-forward-click.png);
+	border-style:inset;
+}
+QPushButton#forward:checked{
+	background-image: url(:/src/btn-forward-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#port_ac_power{
+	background-image: url(:/src/PORTACPOWERAVAILABLE1.png);
+	border-style:none;
+}
+
+QPushButton#port_ac_power:checked{
+	background-image: url(:/src/PORTACPOWERFAILED.png);
+	border-style:inset;
+}
+
+
+QPushButton#stbd_ac_power{
+	background-image: url(:/src/STBDACPOWERAVAILABLE.png);
+	border-style:none;
+}
+
+QPushButton#stbd_ac_power:checked{
+	background-image: url(:/src/STBDACPOWERFAILED.png);
+	border-style:inset;
+}
+
+
+QPushButton#switch_status{
+	background-image: url(:/src/OFF.png);
+	border-style:none;
+}
+QPushButton#switch_status:pressed{
+	background-image: url(:/src/ON.png);
+	border-style:inset;
+}
+QPushButton#switch_status:checked{
+	background-image: url(:/src/ON.png);
+	border-style:inset;
+}
+
+
+QPushButton#dark{
+	background-image: url(:/src/DARK-off.png);
+	border-style:none;
+}
+
+QPushButton#dark:pressed{
+	background-image: url(:/src/DARK-on.png);
+	border-style:inset;
+}
+QPushButton#dark:checked{
+	background-image: url(:/src/DARK-on.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#light{
+	background-image: url(:/src/light-off.png);
+	border-style:none;
+}
+
+QPushButton#light:pressed{
+	background-image: url(:/src/light-on.png);
+	border-style:inset;
+}
+QPushButton#light:checked{
+	background-image: url(:/src/light-on.png);
+	border-style:inset;
+}
+
+QPushButton#normal{
+	background-image: url(:/src/NORMAL-off.png);
+	border-style:none;
+}
+
+QPushButton#normal:pressed{
+	background-image: url(:/src/NORMAL-on.png);
+	border-style:inset;
+}
+QPushButton#normal:checked{
+	background-image: url(:/src/NORMAL-on.png);
+	border-style:inset;
+}
+
+QPushButton#option{
+	background-image: url(:/src/BTN-option-normal.png);
+	border-style:none;
+}
+
+QPushButton#option:pressed{
+	background-image: url(:/src/BTN-option-hover.png);
+	border-style:inset;
+}
+QPushButton#option:hover{
+	background-image: url(:/src/BTN-option-hover.png);
+	border-style:inset;
+}
+
+
+
+
+
+/*保存按钮*/
+QPushButton#videosave{
+	background-image: url(:/src/BTN-SAVE-NORMAL.png);
+	border-style:none;
+}
+
+QPushButton#videosave:pressed{
+	background-image: url(:/src/BTN-SAVE-CLICK.png);
+	border-style:inset;
+}
+QPushButton#videosave:checked{
+	background-image: url(:/src/BTN-SAVE-CLICK.png);
+	border-style:inset;
+}
+QPushButton#videosave:hover{
+	background-image: url(:/src/BTN-SAVE-CLICK.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#hour1{
+	background-image: url(:/src/BTN-1hr-off.png);
+	border-style:none;
+}
+
+QPushButton#hour1:pressed{
+	background-image: url(:/src/BTN-1hr-on.png);
+	border-style:inset;
+}
+QPushButton#hour1:checked{
+	background-image: url(:/src/BTN-1hr-on.png);
+	border-style:inset;
+}
+
+
+
+
+QPushButton#hour12{
+	background-image: url(:/src/BTN-12hr-off.png);
+	border-style:none;
+}
+
+QPushButton#hour12:pressed{
+	background-image: url(:/src/BTN-12hr-on.png);
+	border-style:inset;
+}
+QPushButton#hour12:checked{
+	background-image: url(:/src/BTN-12hr-on.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#hour2{
+	background-image: url(:/src/BTN-2hr-off.png);
+	border-style:none;
+}
+
+QPushButton#hour2:pressed{
+	background-image: url(:/src/BTN-2hr-on.png);
+	border-style:inset;
+}
+QPushButton#hour2:checked{
+	background-image: url(:/src/BTN-2hr-on.png);
+	border-style:inset;
+}
+
+QPushButton#hour24{
+	background-image: url(:/src/BTN-24hr-off.png);
+	border-style:none;
+}
+
+QPushButton#hour24:pressed{
+	background-image: url(:/src/BTN-24hr-on.png);
+	border-style:inset;
+}
+QPushButton#hour24:checked{
+	background-image: url(:/src/BTN-24hr-on.png);
+	border-style:inset;
+}
+
+
+
+QWidget#box {
+	background-image: url(:/src/box01.png);
+}
+
+
+QPushButton#video_play{
+	background-image: url(:/src/BTN-play-normal.png);
+	border-style:none;
+}
+
+QPushButton#video_play:pressed{
+	background-image: url(:/src/BTN-pause-normal.png);
+	border-style:inset;
+}
+QPushButton#video_play:checked{
+	background-image: url(:/src/BTN-pause-normal.png);
+	border-style:inset;
+}
+
+
+
+
+QPushButton#video_stop{
+	background-image: url(:/src/stop-normal.png);
+	border-style:none;
+}
+
+QPushButton#video_stop:pressed{
+	background-image: url(:/src/stop-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#video_last{
+	background-image: url(:/src/BTN-last-normal.png);
+	border-style:none;
+}
+
+QPushButton#video_last:pressed{
+	background-image: url(:/src/BTN-last-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#video_next{
+	background-image: url(:/src/BTN-nex-normal.png);
+	border-style:none;
+}
+
+QPushButton#video_next:pressed{
+	background-image: url(:/src/BTN-next-click.png);
+	border-style:inset;
+}
+
+
+
+
+QWidget#MICPHONE {
+	background-image: url(:/src/MICOHONE-panel.png);
+}
+
+
+
+QPushButton#warning{
+	background-image: url(:/src/BTN-WARNING-locked.png);
+	border-style:none;
+}
+
+QPushButton#warning:pressed{
+	background-image: url(:/src/BTN-WARNING-unlocked.png);
+	border-style:inset;
+}
+
+QPushButton#warning:checked{
+	background-image: url(:/src/BTN-WARNING-unlocked.png);
+	border-style:inset;
+}
+
+QPushButton#defence{
+	background-image: url(:/src/btn-DEFENCElocked.png);
+	border-style:none;
+}
+
+QPushButton#defence:pressed{
+	background-image: url(:/src/BTN-DEFENCE-unlocked.png);
+	border-style:inset;
+}
+
+QPushButton#defence:checked{
+	background-image: url(:/src/BTN-DEFENCE-unlocked.png);
+	border-style:inset;
+}
+
+QWidget#sound {
+	background-image: url(:/src/icon-sound.png);
+}
+
+
+
+QSlider#port_slider::add-page:vertical
+{     
+	background-color: rgb(143, 182, 58);
+	width:3px;
+}
+QSlider#port_slider::sub-page:vertical 
+{
+	background-color: rgb(87, 97, 106);
+	width:3px;
+}
+QSlider#port_slider::groove:vertical 
+{
+	background:transparent;
+	width:3px;
+}
+QSlider#port_slider::handle:vertical 
+{
+	height: 21px;
+	width: 21px;
+	border-image: url(:/src/BTN-sound.png);
+	margin: -0px -9px; 
+}
+
+
+
+QSlider#stbd_slider::add-page:vertical
+{     
+	background-color: rgb(143, 182, 58);
+	width:3px;
+}
+QSlider#stbd_slider::sub-page:vertical 
+{
+	background-color: rgb(87, 97, 106);
+	width:3px;
+}
+QSlider#stbd_slider::groove:vertical 
+{
+	background:transparent;
+	width:3px;
+}
+QSlider#stbd_slider::handle:vertical 
+{
+	height: 21px;
+	width: 21px;
+	border-image: url(:/src/BTN-sound.png);
+	margin: -0px -9px; 
+}
+
+QLabel#label_10 {
+	color:rgb(255, 255, 255);
+	font: 9pt "Agency FB";
+}
+QLabel#label_11 {
+	color:rgb(255, 255, 255);
+	font: 9pt "Agency FB";
+}
+
+
+
+
+
+QPushButton#MICPHONE_PLAY{
+	background-image: url(:/src/BTN-MICPHONE-PLAY-NORMAL.png);
+	border-style:none;
+}
+
+QPushButton#MICPHONE_PLAY:pressed{
+	background-image: url(:/src/BTN-MICPHONE-PLAY-CLICK.png);
+	border-style:inset;
+}
+
+QPushButton#MICPHONE_STOP{
+	background-image: url(:/src/BTN-MICPHONE-STOP-NORMAL.png);
+	border-style:none;
+}
+
+QPushButton#MICPHONE_STOP:pressed{
+	background-image: url(:/src/BTN-MICPHONE-STOP-CLICK.png);
+	border-style:inset;
+}
+
+
+QPushButton#COMPASS{
+	background-image: url(:/src/signal_light-off.png);
+	border-style:none;
+}
+
+QPushButton#COMPASS:pressed{
+	background-image: url(:/src/signal_light-on.png);
+	border-style:inset;
+}
+QPushButton#COMPASS:checked{
+	background-image: url(:/src/signal_light-on.png);
+	border-style:inset;
+}
+
+QPushButton#RADAR_TTM{
+	background-image: url(:/src/signal_light-off.png);
+	border-style:none;
+}
+
+QPushButton#RADAR_TTM:pressed{
+	background-image: url(:/src/signal_light-on.png);
+	border-style:inset;
+}
+QPushButton#RADAR_TTM:checked{
+	background-image: url(:/src/signal_light-on.png);
+	border-style:inset;
+}
+QHeaderView::selection {
+    color: white;
+    background-color: rgb(21,21,21); 
+    border: 0px solid rgb(108, 108, 108);
+    border-radius:0px;
+    border-color: rgb(64, 64, 64);
+
+} 
+
+
+
+QTableView#videofiletableView {
+    color: white;                                       /*表格内文字颜色*/
+    gridline-color: black;                              /*表格内框颜色*/
+    background-color: rgb(108, 108, 108);               /*表格内背景色*/
+    alternate-background-color: rgb(64, 64, 64);
+    selection-color: white;                             /*选中区域的文字颜色*/
+    selection-background-color: rgb(115, 161, 255);        /*选中区域的背景色*/
+    border: 2px groove gray;
+    border-radius: 0px;
+    padding: 2px 4px;
+}
+
+
+
+QTableView#recordingtableView {
+    color: white;                                       /*表格内文字颜色*/
+    gridline-color: black;                              /*表格内框颜色*/
+    background-color: rgb(108, 108, 108);               /*表格内背景色*/
+    alternate-background-color: rgb(64, 64, 64);
+    selection-color: white;                             /*选中区域的文字颜色*/
+    selection-background-color: rgb(115, 161, 255);        /*选中区域的背景色*/
+    border: 2px groove gray;
+    border-radius: 0px;
+    padding: 2px 4px;
+}
+
+
+
+
+QCalendarWidget QTableView 
+{
+
+	color: gray; 
+	alternate-background-color: rgb(21, 21, 21);
+	font: 8pt;
+}
+
+
+QToolButton#qt_calendar_monthbutton,#qt_calendar_yearbutton
+{
+	color: #FF0000; /*修改字体颜色*/
+	font: 8pt simHei; /*也可以修改字体*/
+}
+
+QDialog{
+	background-color: rgb(38, 39, 43);
+}
+
