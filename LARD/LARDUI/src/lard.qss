@@ -1,4 +1,4 @@
-
+﻿
 QMainWindow{
     background-image: url(":/src/background-total.png");
 }
@@ -946,14 +946,17 @@ QCalendarWidget QTableView
 	font: 8pt;
 }
 
+QDialog{
+	background-color: rgb(38, 39, 43);
+}
+QWidget#logo {
+	background-image: url(:/src/logo.png);
+}
+
 
 QToolButton#qt_calendar_monthbutton,#qt_calendar_yearbutton
 {
 	color: #FF0000; /*修改字体颜色*/
 	font: 8pt simHei; /*也可以修改字体*/
-}
-
-QDialog{
-	background-color: rgb(38, 39, 43);
 }
 

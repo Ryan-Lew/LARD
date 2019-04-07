@@ -87,5 +87,6 @@
         <file>src/signal_light-on.png</file>
         <file>src/background.jpeg</file>
         <file>src/background_1.jpg</file>
+        <file>src/logo.png</file>
     </qresource>
 </RCC>
