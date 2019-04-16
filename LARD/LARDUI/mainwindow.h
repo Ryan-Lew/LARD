@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -20,8 +20,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    virtual void keyPressEvent(QKeyEvent *evt);
-    virtual void keyReleaseEvent(QKeyEvent *evt);
+//    virtual void keyPressEvent(QKeyEvent *evt);
+//    virtual void keyReleaseEvent(QKeyEvent *evt);
     virtual void resizeEvent(QResizeEvent *event);
     virtual void timerEvent(QTimerEvent *event);
 public:
@@ -31,7 +31,13 @@ public:
     void initRadarInfo();
     //更新时钟信息
     void updateTimer();
+    //更改语言信息
+    void updateTr(int index);
+
+
+
 private slots:
+    void slots_updateTr(int index);
     void on_switch_status_clicked();
 
     void on_option_clicked();
@@ -59,6 +65,7 @@ private:
     QGraphicsView *m_view = nullptr;
     RadarScene* m_scene = nullptr;
     int m_updateTimerId = 0;
+    int m_language = 0;
 };
 
 #endif // MAINWINDOW_H

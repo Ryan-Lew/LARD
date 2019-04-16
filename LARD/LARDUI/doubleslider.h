@@ -1,4 +1,4 @@
-#ifndef DOUBLESLIDER_H
+﻿#ifndef DOUBLESLIDER_H
 #define DOUBLESLIDER_H
 
 #include <QWidget>

@@ -219,7 +219,7 @@ QLabel#label_12 {
 }
 
 
-QLabel#label_8,QLabel#label_16,QLabel#label_17 {
+QLabel#label_8,QLabel#label_16,QLabel#label_17,QLabel#label_5{
 	color:rgb(165, 165, 165);
 
 }
@@ -935,6 +935,202 @@ QTableView#recordingtableView {
     padding: 2px 4px;
 }
 
+
+QPushButton#shipduenorth{
+	background-image: url(:/src/n_normal.png);
+	border-style:none;
+}
+
+QPushButton#shipduenorth:pressed{
+	background-image: url(:/src/n_click.png);
+	border-style:inset;
+}
+QPushButton#shipduenorth:checked{
+	background-image: url(:/src/n_click.png);
+	border-style:inset;
+}
+
+QPushButton#shipowndirect{
+	background-image: url(:/src/d_normal.png);
+	border-style:none;
+}
+
+QPushButton#shipowndirect:pressed{
+	background-image: url(:/src/d_click.png);
+	border-style:inset;
+}
+QPushButton#shipowndirect:checked{
+	background-image: url(:/src/d_click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#option_ok_btn{
+	background-image: url(:/src/BTN-OK-normal.png);
+	border-style:none;
+}
+
+QPushButton#option_ok_btn:pressed{
+	background-image: url(:/src/BTN-OK-click.png);
+	border-style:inset;
+}
+QPushButton#option_ok_btn:checked{
+	background-image: url(:/src/BTN-OK-click.png);
+	border-style:inset;
+}
+
+
+
+QPushButton#option_cancel_btn{
+	background-image: url(:/src/BTN-cancel-normal.png);
+	border-style:none;
+}
+
+QPushButton#option_cancel_btn:pressed{
+	background-image: url(:/src/BTN-cancel-click.png);
+	border-style:inset;
+}
+QPushButton#option_cancel_btn:checked{
+	background-image: url(:/src/BTN-cancel-click.png);
+	border-style:inset;
+}
+QPushButton#hardware_setting{
+	background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#hardware_setting:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#hardware_setting:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+
+QPushButton#system_setting{
+	background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#system_setting:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#system_setting:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+
+QPushButton#password_setting{
+	background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#password_setting:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#password_setting:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+
+QPushButton#yuntai_settingleft{
+background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#yuntai_settingleft:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#yuntai_settingleft:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#yuntai_settingright{
+	background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#yuntai_settingright:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#yuntai_settingright:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+
+QPushButton#warning_setting{
+	background-color:rgb(50,50,50);
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#warning_setting:pressed{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+QPushButton#warning_setting:checked{
+	background-color:rgb(20,20,20);
+	color: white;
+	border-style: outset;
+}
+
+
+QWidget#option_switch_widget {
+	background-color:rgb(50,50,50);
+}
+
+
+
+QPushButton#verifydialog_ok{
+	background-image: url(:/src/BTN-OK-normal.png);
+	border-style:none;
+}
+
+QPushButton#verifydialog_ok:pressed{
+	background-image: url(:/src/BTN-OK-click.png);
+	border-style:inset;
+}
+QPushButton#verifydialog_ok:checked{
+	background-image: url(:/src/BTN-OK-click.png);
+	border-style:inset;
+}
+
+
+QPushButton#verifydialog_cancel{
+	background-image: url(:/src/BTN-cancel-normal.png);
+	border-style:none;
+}
+
+QPushButton#verifydialog_cancel:pressed{
+	background-image: url(:/src/BTN-cancel-click.png);
+	border-style:inset;
+}
+QPushButton#verifydialog_cancel:checked{
+	background-image: url(:/src/BTN-cancel-click.png);
+	border-style:inset;
+}
 
 
 

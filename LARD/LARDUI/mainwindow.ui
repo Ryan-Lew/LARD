@@ -139,10 +139,16 @@
               <height>30</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>^</string>
+             <string/>
             </property>
             <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
              <bool>true</bool>
             </property>
             <property name="autoExclusive">
@@ -164,14 +170,17 @@
               <height>30</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>N</string>
+             <string/>
             </property>
             <property name="checkable">
              <bool>true</bool>
             </property>
             <property name="checked">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
             <property name="autoRepeat">
              <bool>false</bool>
@@ -229,6 +238,9 @@
           </item>
           <item>
            <widget class="QLabel" name="portlrad_pan">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -236,6 +248,9 @@
           </item>
           <item>
            <widget class="QLabel" name="portlrad_state">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -254,6 +269,9 @@
           </item>
           <item>
            <widget class="QLabel" name="portlrad_title">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -346,6 +364,9 @@
           </item>
           <item>
            <widget class="QLabel" name="heading">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -367,6 +388,9 @@
           </item>
           <item>
            <widget class="QLabel" name="localtime">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -429,6 +453,9 @@
           </item>
           <item>
            <widget class="QLabel" name="radarname">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -447,6 +474,9 @@
           </item>
           <item>
            <widget class="QLabel" name="radarimo">
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -527,6 +557,9 @@
               <height>20</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{background-color:black;color: rgb(18, 161, 73);border-style: inset;}
 QPushButton:checked{background-color:black;color: white; border: 1px white;border-style: outset;};</string>
@@ -559,6 +592,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>20</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{background-color:black;color: rgb(18, 161, 73);border-style: inset;}
 QPushButton:checked{background-color:black;color: white; border: 1px white;border-style: outset;};</string>
@@ -590,6 +626,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>40</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{background-color:black;color: rgb(18, 161, 73);border-style: inset;}
@@ -768,6 +807,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>23</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -799,6 +841,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>48</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -823,6 +868,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>23</width>
               <height>48</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -849,6 +897,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>23</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -873,6 +924,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>28</width>
               <height>28</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -900,6 +954,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
              <height>25</height>
             </size>
            </property>
+           <property name="toolTip">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -908,19 +965,6 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
            </property>
            <property name="autoExclusive">
             <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QSlider" name="control1_slider">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>220</y>
-             <width>101</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
            </property>
           </widget>
           <widget class="QLabel" name="label_4">
@@ -984,6 +1028,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1008,6 +1055,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1084,6 +1134,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1137,6 +1190,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1171,6 +1227,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1224,6 +1283,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1280,6 +1342,196 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+          </widget>
+          <widget class="QWidget" name="widget_22" native="true">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>210</y>
+             <width>105</width>
+             <height>11</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>105</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>105</width>
+             <height>11</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <property name="spacing">
+             <number>1</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="rank1">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank3">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank4">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank5">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -1343,19 +1595,6 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
           <property name="styleSheet">
            <string notr="true"/>
           </property>
-          <widget class="QSlider" name="control2_slider">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>220</y>
-             <width>101</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_8">
            <property name="geometry">
             <rect>
@@ -1401,6 +1640,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1455,6 +1697,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1480,6 +1725,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
              <width>90</width>
              <height>25</height>
             </size>
+           </property>
+           <property name="toolTip">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string/>
@@ -1532,6 +1780,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1586,6 +1837,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1633,6 +1887,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>15</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1657,6 +1914,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>15</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1752,6 +2012,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>23</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1783,6 +2046,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>48</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1807,6 +2073,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>23</width>
               <height>48</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1833,6 +2102,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>23</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1857,6 +2129,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>28</width>
               <height>28</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -1897,6 +2172,196 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+          </widget>
+          <widget class="QWidget" name="widget_29" native="true">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>220</y>
+             <width>105</width>
+             <height>11</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>105</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>105</width>
+             <height>11</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 0, 0);</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_18">
+            <property name="spacing">
+             <number>1</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="rank1_2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank2_2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank3_2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank4_2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="rank5_2">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>13</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>11</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background-color:rgb(120, 120, 120);;border-style: inset;}
+QPushButton:checked{background-color:rgb(18, 161, 73); border-style: outset;};</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -1970,6 +2435,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>26</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1988,6 +2456,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>50</width>
               <height>26</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -2014,6 +2485,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>26</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -2032,6 +2506,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <width>32</width>
               <height>26</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -2091,6 +2568,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
               <height>30</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -2145,6 +2625,9 @@ QPushButton:checked{background-color:black;color: white; border: 1px white;borde
             <width>495</width>
             <height>233</height>
            </size>
+          </property>
+          <property name="toolTip">
+           <string notr="true"/>
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(21, 21, 21);</string>
@@ -2703,6 +3186,9 @@ font:  8pt ;</string>
               <height>95</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
            </widget>
            <widget class="QPushButton" name="videosave">
             <property name="geometry">
@@ -2724,6 +3210,9 @@ font:  8pt ;</string>
               <width>64</width>
               <height>26</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -2749,6 +3238,9 @@ font:  8pt ;</string>
               <width>41</width>
               <height>17</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -2784,6 +3276,9 @@ font:  8pt ;</string>
               <height>18</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -2815,6 +3310,9 @@ font:  8pt ;</string>
               <height>18</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -2845,6 +3343,9 @@ font:  8pt ;</string>
               <width>41</width>
               <height>18</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -2981,6 +3482,9 @@ font:  8pt ;</string>
               <height>42</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -3024,6 +3528,9 @@ font:  8pt ;</string>
               <width>92</width>
               <height>42</height>
              </rect>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -3077,6 +3584,9 @@ font:  8pt ;</string>
               <width>98</width>
               <height>48</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -3159,6 +3669,9 @@ font:  8pt ;</string>
               <height>21</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -3193,6 +3706,9 @@ font:  8pt ;</string>
               <height>21</height>
              </size>
             </property>
+            <property name="toolTip">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -3223,6 +3739,9 @@ font:  8pt ;</string>
               <width>50</width>
               <height>21</height>
              </size>
+            </property>
+            <property name="toolTip">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string/>
@@ -3255,6 +3774,9 @@ font:  8pt ;</string>
              <width>160</width>
              <height>26</height>
             </size>
+           </property>
+           <property name="toolTip">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string/>
@@ -3410,6 +3932,9 @@ font:  8pt ;</string>
                 <height>21</height>
                </size>
               </property>
+              <property name="toolTip">
+               <string notr="true"/>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -3464,6 +3989,9 @@ background-color:</string>
                 <width>20</width>
                 <height>21</height>
                </size>
+              </property>
+              <property name="toolTip">
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>

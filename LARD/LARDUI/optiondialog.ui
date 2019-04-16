@@ -6,500 +6,1233 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>813</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>440</y>
-     <width>621</width>
-     <height>32</height>
-    </rect>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+   <property name="topMargin">
+    <number>0</number>
    </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   <property name="rightMargin">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QLabel" name="option_label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>61</width>
-     <height>16</height>
-    </rect>
+   <property name="bottomMargin">
+    <number>0</number>
    </property>
-   <property name="text">
-    <string>音频路径：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_3">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>81</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>网络设置：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_4">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>241</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>视频存储硬盘的格式化：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_5">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>160</y>
-     <width>141</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>密码修改：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_6">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>190</y>
-     <width>71</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>本船船名：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_7">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>54</width>
-     <height>12</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>IMO：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_8">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>250</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>左舷云台的方位角：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_9">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>280</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>右舷云台的方位角：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_10">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>310</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>俯仰角旋转限位：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_11">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>81</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>云台初始位：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_12">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>370</y>
-     <width>81</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>关机停止位：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_13">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>相对海面高度：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_14">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>40</y>
-     <width>71</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>LRAD 警告：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_15">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>70</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>拒止距离设定：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_16">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>100</y>
-     <width>181</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>自动提醒高速目标的速度值设定：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_17">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>网络摄像机添加：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_18">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>130</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>摄像机参数设置：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_19">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>161</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>系统日期：</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="option_label_20">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>81</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>时间设定：</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>10</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>40</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>70</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>100</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>130</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>160</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>190</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_8">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>220</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_9">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>250</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_10">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>280</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_11">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>310</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_12">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>340</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_13">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>370</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_14">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>400</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_15">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>10</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_16">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>40</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_17">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>70</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_18">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>100</y>
-     <width>113</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_19">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>130</y>
-     <width>191</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
+   <item>
+    <widget class="QWidget" name="option_switch_widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>1</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="system_setting">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#option_cancel_btn{
+	background-color:black;
+	color: rgb(18, 161, 73);
+	border-style: inset;
+}
+
+QPushButton#option_cancel_btn:pressed{
+	background-color:rgb(50,50,50);
+	color: white;
+	border-style: outset;
+}
+QPushButton#option_cancel_btn:checked{
+	background-color:rgb(50,50,50);
+	color: white;
+	border-style: outset;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>系统设置</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="password_setting">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>密码修改</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="yuntai_settingleft">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>左舷设置</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="yuntai_settingright">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>右舷设置</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="warning_setting">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>警告设置</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="hardware_setting">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>硬件设置</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="bottomMargin">
+      <number>9</number>
+     </property>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="currentIndex">
+        <number>2</number>
+       </property>
+       <widget class="QWidget" name="system_page">
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>180</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="0,1">
+          <item>
+           <widget class="QLabel" name="option_label_100">
+            <property name="text">
+             <string>语言设置：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="language">
+            <item>
+             <property name="text">
+              <string>中文</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>英文</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>150</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <item>
+           <widget class="QLabel" name="option_label_3">
+            <property name="text">
+             <string>网络设置：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_4">
+            <property name="text">
+             <string>192.168.0.1:8080</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>120</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,1">
+          <item>
+           <widget class="QLabel" name="option_label_20">
+            <property name="text">
+             <string>时间设定：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="dateTimeEdit">
+            <property name="dateTime">
+             <datetime>
+              <hour>10</hour>
+              <minute>23</minute>
+              <second>10</second>
+              <year>2005</year>
+              <month>1</month>
+              <day>1</day>
+             </datetime>
+            </property>
+            <property name="displayFormat">
+             <string>H:mm:ss</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="0,1">
+          <item>
+           <widget class="QLabel" name="option_label_19">
+            <property name="text">
+             <string>系统日期：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEdit">
+            <property name="dateTime">
+             <datetime>
+              <hour>0</hour>
+              <minute>0</minute>
+              <second>0</second>
+              <year>2019</year>
+              <month>4</month>
+              <day>11</day>
+             </datetime>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_27">
+          <item>
+           <widget class="QLabel" name="option_label_7">
+            <property name="text">
+             <string>IMO：     </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_8">
+            <property name="text">
+             <string>Momo 182</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>241</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_28">
+          <item>
+           <widget class="QLabel" name="option_label_6">
+            <property name="text">
+             <string>本船船名：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_7">
+            <property name="text">
+             <string>Momo</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="password_page">
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="option_label_5">
+            <property name="text">
+             <string>原密码：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_6">
+            <property name="text">
+             <string>123</string>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Normal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="option_label_28">
+            <property name="text">
+             <string>新密码：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_15">
+            <property name="text">
+             <string>11123</string>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="option_label_29">
+            <property name="text">
+             <string>确认密码：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_27">
+            <property name="text">
+             <string>11123</string>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="yuntai_pageleft">
+        <widget class="QWidget" name="layoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="option_label_24">
+            <property name="text">
+             <string>左舷云台开始角度(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_23">
+            <property name="text">
+             <string>30</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>120</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QLabel" name="option_label_25">
+            <property name="text">
+             <string>左舷云台完成角度(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_24">
+            <property name="text">
+             <string>180</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="option_label_21">
+            <property name="text">
+             <string>左舷云台的俯仰角(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_20">
+            <property name="text">
+             <string>6</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="option_label_8">
+            <property name="text">
+             <string>左舷云台的方位角(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_9">
+            <property name="text">
+             <string>30</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>41</x>
+           <y>151</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="option_label_10">
+            <property name="text">
+             <string>俯仰角旋转限位：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_11"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>180</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="option_label_11">
+            <property name="text">
+             <string>云台初始位：      </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_12">
+            <property name="text">
+             <string>30</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>210</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="option_label_12">
+            <property name="text">
+             <string>关机停止位：      </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_13">
+            <property name="text">
+             <string>60</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>240</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="option_label_13">
+            <property name="text">
+             <string>左侧云台相对海面高度(m)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_14">
+            <property name="text">
+             <string>7.5</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="yuntai_pageright">
+        <widget class="QWidget" name="layoutWidget_8">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>240</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_31">
+          <item>
+           <widget class="QLabel" name="option_label_32">
+            <property name="text">
+             <string>右侧云台相对海面高度(m)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_30">
+            <property name="text">
+             <string>15.4</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_9">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>180</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_32">
+          <item>
+           <widget class="QLabel" name="option_label_33">
+            <property name="text">
+             <string>云台初始位：      </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_31">
+            <property name="text">
+             <string>30</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_10">
+         <property name="geometry">
+          <rect>
+           <x>41</x>
+           <y>151</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_33">
+          <item>
+           <widget class="QLabel" name="option_label_34">
+            <property name="text">
+             <string>俯仰角旋转限位：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_32"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_11">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>210</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_34">
+          <item>
+           <widget class="QLabel" name="option_label_35">
+            <property name="text">
+             <string>关机停止位：      </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_33">
+            <property name="text">
+             <string>60</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_13">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_36">
+          <item>
+           <widget class="QLabel" name="option_label_37">
+            <property name="text">
+             <string>右舷云台的方位角(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_35">
+            <property name="text">
+             <string>180</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_14">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_37">
+          <item>
+           <widget class="QLabel" name="option_label_38">
+            <property name="text">
+             <string>右舷云台开始角度(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_36">
+            <property name="text">
+             <string>30</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_16">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_39">
+          <item>
+           <widget class="QLabel" name="option_label_40">
+            <property name="text">
+             <string>右舷云台的俯仰角(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_38">
+            <property name="text">
+             <string>7</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_18">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>120</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_41">
+          <item>
+           <widget class="QLabel" name="option_label_42">
+            <property name="text">
+             <string>右舷云台完成角度(度)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_40">
+            <property name="text">
+             <string>180</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="warning_page">
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>321</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <item>
+           <widget class="QLabel" name="option_label_14">
+            <property name="text">
+             <string>LRAD 警告(海里)：   </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_16">
+            <property name="text">
+             <string>3.8</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>321</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <item>
+           <widget class="QLabel" name="option_label_15">
+            <property name="text">
+             <string>拒止距离设定(海里)：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_17">
+            <property name="text">
+             <string>2.0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>321</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QLabel" name="option_label_16">
+            <property name="text">
+             <string>速度告警设定：      </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_18">
+            <property name="text">
+             <string>100</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="hardware_page">
+        <widget class="QPushButton" name="pushButton">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>120</y>
+           <width>31</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>90</y>
+           <width>31</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <item>
+           <widget class="QLabel" name="option_label_17">
+            <property name="text">
+             <string>网络摄像机添加：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>133</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>device - 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>device - 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>device - 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>device - 4</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <item>
+           <widget class="QLabel" name="option_label_18">
+            <property name="text">
+             <string>摄像机参数设置：  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_19"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>249</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_21">
+          <item>
+           <widget class="QLabel" name="option_label_4">
+            <property name="text">
+             <string>视频存储硬盘路径：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_5">
+            <property name="text">
+             <string>D:/src/vedio/</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>120</y>
+           <width>251</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <item>
+           <widget class="QLabel" name="option_label">
+            <property name="text">
+             <string>音频路径：        </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="text">
+             <string>E:/src/audio/</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="rightMargin">
+        <number>24</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="option_ok_btn">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="option_cancel_btn">
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>OptionDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>OptionDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

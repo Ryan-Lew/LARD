@@ -1,4 +1,4 @@
-#ifndef VOLUMEWIDGET_H
+﻿#ifndef VOLUMEWIDGET_H
 #define VOLUMEWIDGET_H
 
 #include <QWidget>

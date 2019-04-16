@@ -1,23 +1,27 @@
-#ifndef ENEMYSHIPITEM_H
+ï»¿#ifndef ENEMYSHIPITEM_H
 #define ENEMYSHIPITEM_H
 #include <QObject>
 #include <QGraphicsRectItem>
+enum ENEMYSHIPSTATUS{
+    SHIP_NORMAL = 0,     //ä¸€èˆ¬
+    SHIP_WARNING = 1,    //è­¦å‘Š
+    SHIP_ERROR = 2,      //å±é™©
+};
 
 class EnemyShipItem : public QGraphicsRectItem
 {
 
 public:
-    EnemyShipItem(QGraphicsItem* parent = nullptr);
+    EnemyShipItem(QGraphicsItem *parent = nullptr);
 
 
 
     virtual QRectF boundingRect() const override;
 
-    virtual bool contains(const QPointF &point) const override;
-
-
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
-    virtual QPainterPath shape() const override;
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
     virtual int type() const override;
 
 
@@ -33,31 +37,45 @@ public:
     float angle() const;
     void setAngle(float angle);
 
+    bool dueNorth() const;
+    void setDueNorth(bool dueNorth);
+
+    float shipRadius() const;
+    void setShipRadius(float shipRadius);
+
+    QPointF centerPt() const;
+    void setCenterPt(const QPointF &centerPt);
+
+    ENEMYSHIPSTATUS status() const;
+    void setStatus(const ENEMYSHIPSTATUS &status);
+
 private:
-    //¶àÉÙº£Àï
+    float m_shipRadius = 0;
+    bool m_dueNorth = true;
+    //å¤šå°‘æµ·é‡Œ
     float m_seaMile = 0;
-    //Ò»º£Àï¶ÔÓ¦µÄÏñËØ
+    //ä¸€æµ·é‡Œå¯¹åº”çš„åƒç´ 
     float m_fixSeaMile = 0;
-    //Ïà¶ÔÕı±±½Ç¶È
+    //ç›¸å¯¹æ­£åŒ—è§’åº¦
     float m_seaAngle = 0;
-    //ÖĞĞÄµãÍ¨¹ıº£ÀïºÍÕı±±½Ç¶È¼ÆËã
+    //ä¸­å¿ƒç‚¹é€šè¿‡æµ·é‡Œå’Œæ­£åŒ—è§’åº¦è®¡ç®—
     QPointF m_centerPt = QPointF(0.0,0.0);
-    //°ë¾¶
+    //åŠå¾„
     float m_radius = 10;
-    //×ÔÉíµÄ·½Ïò½Ç Õı±±·½Ïò£¬Èç¹û²»ÊÇÕı±±·½Ïò¾Í¼õÈ¥Ïà¶Ô´¬Ö»µÄ½Ç¶È
+    //è‡ªèº«çš„æ–¹å‘è§’ æ­£åŒ—æ–¹å‘ï¼Œå¦‚æœä¸æ˜¯æ­£åŒ—æ–¹å‘å°±å‡å»ç›¸å¯¹èˆ¹åªçš„è§’åº¦
     float m_angle = 0;
 
     QRectF m_hintRect ;
     float m_hintWidth = 40;
     float m_hintHeight = 26;
-    //Ğı×ª½Ç¶È
+    //æ—‹è½¬è§’åº¦
     QPointF rotaryAngle(QPointF lastPt);
-    //³õÊ¼»¯ÌáÊ¾¶Ô»°¿ò
+    //åˆå§‹åŒ–æç¤ºå¯¹è¯æ¡†
     void updateHintRect();
-    QString m_B = "100";//·½Î»½Ç
-    QString m_S = "233";//ËÙ¶È
+    QString m_B = "100";//æ–¹ä½è§’
+    QString m_S = "233";//é€Ÿåº¦
     void updateChooseRect();
-
+    ENEMYSHIPSTATUS m_status;
 
 };
 

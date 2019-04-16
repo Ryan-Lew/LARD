@@ -1,4 +1,4 @@
-#ifndef SHIPITEM_H
+ï»¿#ifndef SHIPITEM_H
 #define SHIPITEM_H
 
 #include <QObject>
@@ -13,7 +13,7 @@ public:
 
 
     virtual QRectF boundingRect() const override;
-
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
     virtual bool contains(const QPointF &point) const override;
 
 
@@ -28,44 +28,70 @@ public:
     float fixSeaMile() const;
     void setFixSeaMile(float fixSeaMile);
 
+    bool dueNorth() const;
+    void setDueNorth(bool dueNorth);
+
+    float angle() const;
+    void setAngle(float angle);
+
+    QPointF localHeadShipPoint() const;
+    void setLocalHeadShipPoint(const QPointF &localHeadShipPoint);
+
+
+    void updateLeftAngle(float leftAngle);
+
+    void updateRightAngle(float rightAngle);
+
 private :
+    bool m_dueNorth = true;
     float m_width = 20;
     float m_height = 50;
 
     float m_seaMile = 1.2;
     float m_seaMileLength = 200;
-    float m_leftAngle = 0;               //×óÇ°ĞıÒí½Ç¶È
-    float m_rightAngle = 30;              //ÓÒÇ°ĞıÒí½Ç¶È
-    float m_dxAngle = 30;               //À®°ÈÄ¬ÈÏµÄ½Ç¶È
-    float m_angle = 280;                  //Ä¬ÈÏ½Ç¶È
+    float m_leftAngle = 0;               //å·¦å‰æ—‹ç¿¼è§’åº¦
+    float m_rightAngle = 30;              //å³å‰æ—‹ç¿¼è§’åº¦
+    float m_dxAngle = 30;               //å–‡å­é»˜è®¤çš„è§’åº¦
+    float m_angle = 30;                  //é»˜è®¤è§’åº¦
     float m_headPercent = 4/5.0;
     float m_leftPercent = 3/5.0;
-    float m_fixSeaMile = 0;                 //Ò»º£Àï¶ÔÓ¦µÄÏñËØ
+    float m_fixSeaMile = 0;                 //ä¸€æµ·é‡Œå¯¹åº”çš„åƒç´ 
     QPointF m_centerPt = QPointF(0.0,0.0);
-    QPointF m_headShipPoint;            //´¬Í·
-    QPointF m_headLeftShipPoint;        //×óÇ°ĞıÒí
-    QPointF m_headRightShipPoint;       //ÓÒÇ°ĞıÒí
-    QPointF m_centerLeftShipPoint;      //ÖĞĞÄ×ó²àÀ®°È
-    QPointF m_centerRightShipPoint;     //ÖĞĞÄÓÒ²à²àÀ®°È
-    QPointF m_tailLeftShipPoint;        //×óºóĞıÒí
-    QPointF m_tailRightShipPoint;       //ÓÒºóĞıÒí
+    QPointF m_headShipPoint;            //èˆ¹å¤´
+    QPointF m_headLeftShipPoint;        //å·¦å‰æ—‹ç¿¼
+    QPointF m_headRightShipPoint;       //å³å‰æ—‹ç¿¼
+    QPointF m_centerLeftShipPoint;      //ä¸­å¿ƒå·¦ä¾§å–‡å­
+    QPointF m_centerRightShipPoint;     //ä¸­å¿ƒå³ä¾§ä¾§å–‡å­
+    QPointF m_tailLeftShipPoint;        //å·¦åæ—‹ç¿¼
+    QPointF m_tailRightShipPoint;       //å³åæ—‹ç¿¼
+
+    QPointF m_localHeadShipPoint;
 
 
 
-    //¼ÆËã´¬Ö»µãĞÅÏ¢
+    //è®¡ç®—èˆ¹åªç‚¹ä¿¡æ¯
     void countShip();
-    //Ğı×ª½Ç¶È
+    //æ—‹è½¬è§’åº¦
     QPointF rotaryAngle(QPointF lastPt);
 
     QPointF rotaryAngle(QPointF centerPt, QPointF lastPt,float angle);
 
-    //»æÖÆÉÈĞÎ
-    //µÚÒ»¸ö²ÎÊı»­±Ê
-    //µÚ¶ş¸ö²ÎÊı°ë¾¶
-    //µÚÈı¸ö²ÎÊı¿ªÊ¼½Ç¶È
-    //µÚËÄ¸ö²ÎÊı¿çÔ½½Ç¶È
-    //µÚÎå¸ö²ÎÊıÖĞĞÄµã
+    //ç»˜åˆ¶æ‰‡å½¢
+    //ç¬¬ä¸€ä¸ªå‚æ•°ç”»ç¬”
+    //ç¬¬äºŒä¸ªå‚æ•°åŠå¾„
+    //ç¬¬ä¸‰ä¸ªå‚æ•°å¼€å§‹è§’åº¦
+    //ç¬¬å››ä¸ªå‚æ•°è·¨è¶Šè§’åº¦
+    //ç¬¬äº”ä¸ªå‚æ•°ä¸­å¿ƒç‚¹
     void gradientArc(QPainter *painter, int radius, int startAngle, int angleLength,QPointF centerPt, QColor color);
+
+
+    //ç»˜åˆ¶æ‰‡å½¢
+    //ç¬¬ä¸€ä¸ªå‚æ•°ç”»ç¬”
+    //ç¬¬äºŒä¸ªå‚æ•°åŠå¾„
+    //ç¬¬ä¸‰ä¸ªå‚æ•°å¼€å§‹è§’åº¦
+    //ç¬¬å››ä¸ªå‚æ•°è·¨è¶Šè§’åº¦
+    //ç¬¬äº”ä¸ªå‚æ•°ä¸­å¿ƒç‚¹
+    void gradientOtherArc(QPainter *painter, int radius, int startAngle, int angleLength,QPointF centerPt, QColor color);
 };
 
 #endif // SHIPITEM_H

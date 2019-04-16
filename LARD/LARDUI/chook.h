@@ -1,4 +1,4 @@
-#ifndef CHOOK_H
+ï»¿#ifndef CHOOK_H
 #define CHOOK_H
 
 #include <QObject>
@@ -12,11 +12,11 @@ public:
     ~CHook();
 
 private:
-     //¹¦ÄÜ¼ü
+     //åŠŸèƒ½é”®
     void hook(bool flag);
-    //ÏÔÊ¾ÈÎÎñÀ¸
+    //æ˜¾ç¤ºä»»åŠ¡æ 
     void showTaskWindow(bool flag);
-     //ÈÎÎñ¹ÜÀíÆ÷
+     //ä»»åŠ¡ç®¡ç†å™¨
     void enableTaskManager(bool flag);
 
 private:

@@ -1,4 +1,4 @@
-#include "volumewidget.h"
+﻿#include "volumewidget.h"
 #include "ui_volumewidget.h"
 #include <QPainter>
 #include <QDebug>

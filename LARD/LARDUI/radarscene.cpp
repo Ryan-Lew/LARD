@@ -1,4 +1,4 @@
-#include "radarscene.h"
+ï»¿#include "radarscene.h"
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
@@ -23,18 +23,26 @@ void RadarScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void RadarScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+    //ç‚¹å‡»äº†ç”»å¸ƒå°±æ›´æ–°è§’åº¦
+    updateShipBugle();
     QGraphicsScene::mouseReleaseEvent(mouseEvent);
+}
+
+void RadarScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
+{
+
+    QGraphicsScene::mouseMoveEvent(mouseEvent);
 }
 
 void RadarScene::drawBackground(QPainter *painter, const QRectF &rect)
 {
 
-    //·´¾â³Ý
+    //åé”¯é½¿
     painter->setRenderHint(QPainter::Antialiasing, true);
     updateRadar(rect);
     painter->save();
     painter->fillRect(rect,QBrush(Qt::black));
-    //»æÖÆÀ×´ïÈ¦
+    //ç»˜åˆ¶é›·è¾¾åœˆ
     for(int i =0;i<m_radarRings.size();i++){
         auto w = m_radarRings.at(i);
 
@@ -44,10 +52,10 @@ void RadarScene::drawBackground(QPainter *painter, const QRectF &rect)
 
     }
     painter->setPen(QPen(m_radarLineColor,1));
-    //»æÖÆÖ±Ïß
+    //ç»˜åˆ¶ç›´çº¿
     painter->drawLine(m_radarTopPoint,m_radarBottomPoint);
     painter->drawLine(m_radarLeftPoint,m_radarRightPoint);
-    //»æÖÆ¿Ì¶È³ß
+    //ç»˜åˆ¶åˆ»åº¦å°º
     for (auto w : m_scaleLists)
     {
         painter->drawLine(QPoint(0.0,w),QPoint(m_scaleWidth,w));
@@ -56,7 +64,7 @@ void RadarScene::drawBackground(QPainter *painter, const QRectF &rect)
         painter->drawLine(QPoint(-w,0),QPoint(-w,-m_scaleWidth));
     }
 
-    //»æÖÆ¿Ì¶È³ßÏÂÃæµÄ¾ßÌå¾«¶È
+    //ç»˜åˆ¶åˆ»åº¦å°ºä¸‹é¢çš„å…·ä½“ç²¾åº¦
     QFontMetrics mit(painter->font());
     for(int i =0;i<m_scaleLists.size()-1;i++)
     {
@@ -110,14 +118,14 @@ void RadarScene::drawBackground(QPainter *painter, const QRectF &rect)
         painter->restore();
 
     }else{
-        //»æÖÆÔ²È¦ÉÏÃæµÄ½Ç¶È
+        //ç»˜åˆ¶åœ†åœˆä¸Šé¢çš„è§’åº¦
         for(auto var : m_angleMap){
            //painter->setPen(QPen(m_radarLineCenterColor,1));
            //painter->drawLine(var.startPt(),QPointF(0.0,0.0));
            painter->setPen(QPen(m_radarLineColor,3));
            painter->drawLine(var.startPt(),var.endPt());
         }
-        //»æÖÆÔ²È¦ÉÏµÄ½Ç¶ÈÐÅÏ¢
+        //ç»˜åˆ¶åœ†åœˆä¸Šçš„è§’åº¦ä¿¡æ¯
         painter->setPen(QPen(m_radarLineColor,1));
 
         for(auto var : m_angleMap)
@@ -131,42 +139,42 @@ void RadarScene::drawBackground(QPainter *painter, const QRectF &rect)
         }
 
     }
-    //»æÖÆ¾ÜÖ¹¾àÀë º£Àï
+    //ç»˜åˆ¶æ‹’æ­¢è·ç¦» æµ·é‡Œ
     painter->setPen(QPen(Qt::red,1));
     auto denial_w = m_denialSeaMile*m_fixSeaMile;
     painter->drawEllipse(-denial_w,-denial_w,2*denial_w,2*denial_w);
-    //»æÖÆ¾¯¸æ¾àÀë º£Àï
+    //ç»˜åˆ¶è­¦å‘Šè·ç¦» æµ·é‡Œ
     painter->setPen(QPen(Qt::white,1));
     auto warning_w = m_warningSeaMile*m_fixSeaMile;
     painter->drawEllipse(-warning_w,-warning_w,2*warning_w,2*warning_w);
-    //»­Ô²
+    //ç”»åœ†
     painter->restore();
 }
 
 void RadarScene::updateRadar(const QRectF &rect)
 {
 
-    //¸üÐÂ°ë¾¶
+    //æ›´æ–°åŠå¾„
     m_radarRings.clear();
 
     float width = rect.width()/2 - m_padding;
     float height = rect.height()/2 - m_padding;
-    //¸üÐÂ´óÐ¡
+    //æ›´æ–°å¤§å°
     m_fixRadius = this->width()/2 - m_padding;
-    //¸üÐÂÃ¿Ò»º£ÀïµÄÏñËØÖµ
+    //æ›´æ–°æ¯ä¸€æµ·é‡Œçš„åƒç´ å€¼
     m_fixSeaMile = m_fixRadius/m_seaMile;
 
-    //Ã¿Ò»´ÎµÄ±ä»¯
+    //æ¯ä¸€æ¬¡çš„å˜åŒ–
     float dx = width/m_splitMile;
     for (float i = width;i>0;i-=dx){
         m_radarRings.append(i);
     }
-    //¸üÐÂÀ×´ïÈ¦ÉÏÃæµÄµã
+    //æ›´æ–°é›·è¾¾åœˆä¸Šé¢çš„ç‚¹
     m_radarTopPoint = QPointF(0.0,-height);
     m_radarBottomPoint= QPointF(0.0,height);
     m_radarLeftPoint= QPointF(-width,0.0);
     m_radarRightPoint= QPointF(width,0.0);
-    //¸üÐÂ¿Ì¶ÈµãÐÅÏ¢
+    //æ›´æ–°åˆ»åº¦ç‚¹ä¿¡æ¯
     float scale_dx = width/(m_splitMile*2);
     m_scaleLists.clear();
     for (float i = width;i>0;i-=scale_dx){
@@ -176,7 +184,7 @@ void RadarScene::updateRadar(const QRectF &rect)
         }
     }
 
-    //¸üÐÂ½Ç¶È×ø±ê
+    //æ›´æ–°è§’åº¦åæ ‡
     float radius = width;
     int angle_count = 360/m_angle;
     m_angleMap.clear();
@@ -217,6 +225,110 @@ bool RadarScene::dictSwitch() const
 void RadarScene::setDictSwitch(bool dictSwitch)
 {
     m_dictSwitch = dictSwitch;
+
+    float radius = 0;
+    foreach (QGraphicsItem *item, items())
+    {
+
+        //æ›´æ–°æœ¬èˆ¹ä¿¡æ¯
+        if (item->type() == 1)
+        {
+
+            ShipItem* _item = nullptr;
+            _item = (ShipItem*)item;
+            if(_item!= nullptr){
+                _item->setDueNorth(m_dictSwitch);
+                radius = _item->angle();
+            }
+        }
+    }
+    foreach (QGraphicsItem *item, items())
+    {
+
+        //æ›´æ–°æœ¬èˆ¹ä¿¡æ¯
+        if (item->type() == 1)
+        {
+
+            ShipItem* _item = nullptr;
+            _item = (ShipItem*)item;
+            if(_item!= nullptr){
+                _item->setDueNorth(m_dictSwitch);
+            }
+        }
+
+        if (item->type() == 2)
+        {
+            EnemyShipItem* _item = nullptr;
+            _item = (EnemyShipItem*)item;
+            if(_item!= nullptr){
+                 _item->setDueNorth(m_dictSwitch);
+            }
+            _item->setShipRadius(radius);
+        }
+    }
+}
+
+void RadarScene::updateShipBugle()
+{
+    ShipItem* _item = nullptr;
+    foreach (QGraphicsItem *item, items())
+    {
+
+        //æ›´æ–°æœ¬èˆ¹ä¿¡æ¯
+        if (item->type() == 1)
+        {
+            _item = (ShipItem*)item;
+        }
+    }
+    EnemyShipItem* e_item = nullptr;
+    foreach (QGraphicsItem *item, items())
+    {
+        if (item->type() == 2&&item->isSelected())
+        {
+
+            e_item = (EnemyShipItem*)item;
+
+        }
+    }
+    if (_item != nullptr && e_item!=nullptr){
+        QPointF p1 = _item->localHeadShipPoint();
+        QPointF p2 = QPointF(0.0,0.0);
+        QPointF p3 = e_item->centerPt();
+        auto S =  (p1.x()-p3.x())*(p2.y()-p3.y())-(p1.y()-p3.y())*(p2.x()-p3.x());
+        if(S>0){
+            //å·¦ä¾§
+            qDebug()<<"left" <<fabsf(360 - e_item->seaAngle() - _item->angle() );
+            _item->updateLeftAngle(fabsf(360 - e_item->seaAngle() - _item->angle() ));
+
+        }else{
+            qDebug()<<"right" <<e_item->seaAngle() - _item->angle();
+             _item->updateRightAngle(e_item->seaAngle() - _item->angle());
+
+        }
+    }
+    update();
+}
+
+void RadarScene::updateEnemyShip()
+{
+    foreach (QGraphicsItem *item, items())
+    {
+        if (item->type() == 2)
+        {
+            EnemyShipItem* e_item = nullptr;
+            e_item = (EnemyShipItem*)item;
+            if(e_item){
+                if(e_item->seaMile() > m_warningSeaMile){
+                    e_item->setStatus(SHIP_NORMAL);
+                }else if(e_item->seaMile() < m_warningSeaMile&&e_item->seaMile() > m_denialSeaMile){
+                    e_item->setStatus(SHIP_WARNING);
+                }else if(e_item->seaMile() < m_denialSeaMile&& e_item->seaMile()>0){
+                    e_item->setStatus(SHIP_ERROR);
+                }
+
+            }
+        }
+    }
 }
 
 
@@ -237,7 +349,7 @@ void RadarScene::updateItem()
     foreach (QGraphicsItem *item, items())
     {
 
-        //¸üÐÂ±¾´¬ÐÅÏ¢
+        //æ›´æ–°æœ¬èˆ¹ä¿¡æ¯
         if (item->type() == 1)
         {
 

@@ -1,4 +1,4 @@
-#ifndef RADARSCENE_H
+ï»¿#ifndef RADARSCENE_H
 #define RADARSCENE_H
 #include <QGraphicsScene>
 #include <QMap>
@@ -43,9 +43,9 @@ public slots:
 
 public:
 
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent);
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent);
-
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)override;
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)override;
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
     virtual void drawBackground(QPainter *painter, const QRectF &rect);
 
 
@@ -57,38 +57,41 @@ public:
 
     bool dictSwitch() const;
     void setDictSwitch(bool dictSwitch);
-
+    //æ›´æ–°èˆ¹å–‡å­è§’åº¦
+    void updateShipBugle();
+    //æ›´æ–°æ‰€æœ‰èˆ¹åªä¿¡æ¯
+    void updateEnemyShip();
 private:
 
     QColor m_radarLineColor = QColor(0,130,0);
     QColor m_radarLineCenterColor = QColor(130,130,130);
-    //¸üĞÂÀ×´ïÍ¼
+    //æ›´æ–°é›·è¾¾å›¾
     void updateRadar(const QRectF &);
 
-    //À×´ïÈ¦´óĞ¡
+    //é›·è¾¾åœˆå¤§å°
     QList<float> m_radarRings;
-    //¿Ì¶ÈµãÎ»ÖÃ
+    //åˆ»åº¦ç‚¹ä½ç½®
     QList<float> m_scaleLists;
-    //¿Ì¶È¿í¶È
+    //åˆ»åº¦å®½åº¦
     int m_scaleWidth = 5;
 
-    //Ä¬ÈÏÒ»º£Àï
+    //é»˜è®¤ä¸€æµ·é‡Œ
     float m_seaMile = 2.0;
 
-    //¾ÜÖ¹¾àÀë º£Àï
+    //æ‹’æ­¢è·ç¦» æµ·é‡Œ
     float m_denialSeaMile = 1.3;
-    //¾¯¸æ¾àÀë º£Àï
+    //è­¦å‘Šè·ç¦» æµ·é‡Œ
     float m_warningSeaMile = 3.3;
 
-    //·Ö¸îº£Àï¿Ì¶È³ß
+    //åˆ†å‰²æµ·é‡Œåˆ»åº¦å°º
     int m_splitMile = 5;
-    //À×´ï¾àÀë±ß¿òµÄ¾àÀë
+    //é›·è¾¾è·ç¦»è¾¹æ¡†çš„è·ç¦»
     int m_padding = 50;
-    //¹Ì¶¨µÄ´óĞ¡
+    //å›ºå®šçš„å¤§å°
     float m_fixRadius = 0;
-    //¹Ì¶¨µÄÒ»º£Àï¶àÉÙÏñËØ
+    //å›ºå®šçš„ä¸€æµ·é‡Œå¤šå°‘åƒç´ 
     float m_fixSeaMile = 0;
-    //À×´ïÈ¦ÉÏÃæµÄµã
+    //é›·è¾¾åœˆä¸Šé¢çš„ç‚¹
     QPointF m_radarTopPoint;
     QPointF m_radarBottomPoint;
     QPointF m_radarLeftPoint;
@@ -98,14 +101,14 @@ private:
 
 
 
-    //Õı±±¿ª¹Ø
+    //æ­£åŒ—å¼€å…³
     bool m_dictSwitch = true;
 
-    //Õı±±Î»ÖÃ
+    //æ­£åŒ—ä½ç½®
     QMap<QString,QRectF> m_northMap ;
     float m_northWidth = 40;
     float m_northHeight = 30;
-    //À×´ïÍ¼ÉÏµÄÃ¿Ò»¸ö¿Ì¶ÈµÄ½Ç¶È,Ä¬ÈÏ30¶È
+    //é›·è¾¾å›¾ä¸Šçš„æ¯ä¸€ä¸ªåˆ»åº¦çš„è§’åº¦,é»˜è®¤30åº¦
     float m_angle = 30;
 
     QList<RadarAngleInfo> m_angleMap;
