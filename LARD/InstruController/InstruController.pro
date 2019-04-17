@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
+QT += serialport
 
 TARGET = InstruController
 TEMPLATE = lib
@@ -24,11 +25,26 @@ DESTDIR = $$PWD/../../bin
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        instrucontroller.cpp
+        instrucontroller.cpp \
+    communication/serial422.cpp \
+    communication/serialcombase.cpp \
+#    communication/serialnmea.cpp \
+    radar.cpp \
+    compasser.cpp
 
 HEADERS += \
         instrucontroller.h \
-        instrucontroller_global.h 
+        instrucontroller_global.h \ 
+    communication/serial422.h \
+    communication/serialcombase.h \
+#    communication/serialnmea.h \
+    ../../inc/commonstruct.h \
+    radar.h \
+    compasser.h
+
+INCLUDEPATH += ../../inc
+
+LIBS += $$PWD/../../lib/libboost_serialization-mgw53-mt-d-x32-1_68.a
 
 unix {
     target.path = /usr/lib
