@@ -19,15 +19,12 @@ public:
     virtual  ~Serial422();
 
     void    SetStopRun(){m_bstop=true;}
-    QVector<QByteArray>     GetTTMdata();
+    QVector<QByteArray>     Getdata();
 
 
-private:
+protected:
     void    readData();
     void    sendData(QByteArray data);
-
-
-protected :
     virtual void    run();
 
 private:

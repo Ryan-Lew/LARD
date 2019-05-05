@@ -2,7 +2,7 @@
 
 SerialComBase::SerialComBase(stComConfig cfg):m_cfg(cfg), m_serial(nullptr)
 {
-
+    connectSerial();
 }
 
 SerialComBase::~SerialComBase()

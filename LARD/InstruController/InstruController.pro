@@ -30,7 +30,9 @@ SOURCES += \
     communication/serialcombase.cpp \
 #    communication/serialnmea.cpp \
     radar.cpp \
-    compasser.cpp
+    compasser.cpp \
+    consolecontrol.cpp \
+    cloud.cpp
 
 HEADERS += \
         instrucontroller.h \
@@ -40,7 +42,9 @@ HEADERS += \
 #    communication/serialnmea.h \
     ../../inc/commonstruct.h \
     radar.h \
-    compasser.h
+    compasser.h \
+    consolecontrol.h \
+    cloud.h
 
 INCLUDEPATH += ../../inc
 

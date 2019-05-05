@@ -10,7 +10,7 @@ Serial422::~Serial422()
 
 }
 
-QVector<QByteArray> Serial422::GetTTMdata()
+QVector<QByteArray> Serial422::Getdata()
 {
     QVector<QByteArray> arr;
     m_lock.lock();

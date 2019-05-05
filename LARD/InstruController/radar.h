@@ -22,7 +22,6 @@ public:
 protected:
     void init();
 
-
 private:
     boost::shared_ptr<stConfig>     m_config;
     boost::shared_ptr<Serial422>    m_pcomm;

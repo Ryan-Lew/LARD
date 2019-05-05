@@ -10,6 +10,8 @@ class Compasser : public SerialComBase
 public:
     Compasser(stComConfig cfg);
 
+    float   GetShipDirection(){return m_HDT;}
+
 protected :
     virtual void    run();
     void            sendAskMessage();

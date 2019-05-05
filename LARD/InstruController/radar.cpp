@@ -26,7 +26,7 @@ QVector<boost::shared_ptr<TargetInfo> > Radar::GetRadarInfo()
 {
     QVector<shared_ptr<TargetInfo> > vectarget;
     QVector<QByteArray> vecorgdata;
-    vecorgdata = m_pcomm->GetTTMdata();
+    vecorgdata = m_pcomm->Getdata();
     for(auto a: vecorgdata)
     {
         QByteArray arr = a;
