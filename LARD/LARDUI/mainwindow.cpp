@@ -1,6 +1,7 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <qcustomcalendarwidget.h>
+#include <QTranslator>
 #include <QDateTimeEdit>
 #include <QHBoxLayout>
 #include <QDebug>
@@ -23,7 +24,7 @@
 #include "shipitem.h"
 #include "enemyshipitem.h"
 #include "verifydialog.h"
-
+#include "optiondialog.h"
 extern "C"
 {
     #include "libavcodec/avcodec.h"
@@ -59,7 +60,12 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->calendarWidget->setVerticalHeaderFormat(QCalendarWidget::VerticalHeaderFormat::NoVerticalHeader);
 
     m_video1 = new LardVideo;
+    m_video1->setHintInfo("16:55:2122NoV 2018 H:317 PORT P:072 T:-2");
+    m_video1->setBkSrc(":/src/background.jpeg");
+
     m_video2 = new LardVideo;
+    m_video2->setHintInfo("16:55:2122NoV 2018 H:317 STBD P:072 T:-2");
+    m_video2->setBkSrc(":/src/background_1.jpg");
     ui->video1->layout()->addWidget(m_video1);
     ui->video2->layout()->addWidget(m_video2);
 
@@ -113,9 +119,9 @@ MainWindow::MainWindow(QWidget *parent) :
     {
         EnemyShipItem* testItem = new EnemyShipItem();
         testItem->setSeaAngle(132);
-        testItem->setSeaMile(2.3);
+        testItem->setSeaMile(0.9);
         testItem->setAngle(30);
-
+        testItem->setRect(0,0,20,20);
         m_scene->addItem(testItem);
     }
     {
@@ -123,7 +129,7 @@ MainWindow::MainWindow(QWidget *parent) :
         testItem->setSeaAngle(97);
         testItem->setSeaMile(1.7);
         testItem->setAngle(44);
-
+        testItem->setRect(0,0,20,20);
         m_scene->addItem(testItem);
     }
     {
@@ -131,13 +137,16 @@ MainWindow::MainWindow(QWidget *parent) :
         testItem1->setSeaAngle(30);
         testItem1->setSeaMile(4.3);
         testItem1->setAngle(187);
-
+        testItem1->setRect(0,0,20,20);
         m_scene->addItem(testItem1);
     }
     //开始刷新时间定时器
     m_updateTimerId = startTimer(1000);
     //初始化雷达相关信息
     initRadarInfo();
+    updateTr(m_language);
+    m_scene->updateEnemyShip();
+
 }
 
 MainWindow::~MainWindow()
@@ -145,16 +154,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::keyPressEvent(QKeyEvent *evt)
-{
+//void MainWindow::keyPressEvent(QKeyEvent *evt)
+//{
 
 
-}
+//}
 
-void MainWindow::keyReleaseEvent(QKeyEvent *evt)
-{
+//void MainWindow::keyReleaseEvent(QKeyEvent *evt)
+//{
 
-}
+//}
 
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
@@ -174,16 +183,17 @@ void MainWindow::createAndLayoutInterfaces()
 
     m_view = new QGraphicsView();
 
-    m_view->centerOn(0,0);
+    m_view->centerOn(0,0);/*
     m_view->setFixedWidth(1080);
-    m_view->setFixedHeight(1080);
-    m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_view->verticalScrollBar()->hide();
+    m_view->setFixedHeight(1080);*/
+        ui->gl_rander->layout()->addWidget(m_view);
+    //m_view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   // m_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    //m_view->verticalScrollBar()->hide();
     m_scene = new RadarScene();
     m_view->setScene(m_scene);
     m_scene->setSceneRect(-m_view->width()/2,-m_view->height()/2,m_view->width(),m_view->height());
-    ui->gl_rander->layout()->addWidget(m_view);
+
 
 }
 
@@ -240,6 +250,43 @@ void MainWindow::updateTimer()
 
 }
 
+void MainWindow::updateTr(int index)
+{
+    QString qmFilename;
+    static QTranslator* translator;
+    if (translator != NULL)
+    {
+        qApp->removeTranslator(translator);
+        delete translator;
+        translator = NULL;
+    }
+    translator = new QTranslator;
+
+    QString runPath = QCoreApplication::applicationDirPath();       //获取文件运行路径
+
+    if(index == 0)
+    {
+        qmFilename = runPath + "/lang_Chinese.qm";
+    }
+    if (index == 1)
+    {
+        qmFilename = runPath + "/lang_English.qm";
+    }
+    if (translator->load(qmFilename))
+    {
+        qApp->installTranslator(translator);
+    }
+    ui->retranslateUi(this);             // 重新设置界面显示
+    initRadarInfo();
+    m_language = index;
+}
+
+
+void MainWindow::slots_updateTr(int index)
+{
+    updateTr(index);
+}
+
 void MainWindow::on_switch_status_clicked()
 {
     if(ui->switch_status->isChecked()){
@@ -255,6 +302,12 @@ void MainWindow::on_option_clicked()
     VerifyDialog dialog;
     if(dialog.exec() ==QDialog::Accepted){
 
+        OptionDialog dialog;
+        dialog.setLanguge(m_language);
+        connect(&dialog,SIGNAL(signal_changeTr(int)),this,SLOT(slots_updateTr(int)));
+        if(dialog.exec() ==QDialog::Accepted){
+
+        }
     }
 }
 
@@ -273,17 +326,26 @@ void MainWindow::on_seamile4_clicked()
 void MainWindow::on_seamile8_clicked()
 {
     m_scene->setSeaMile(8);
+    auto var = m_scene->items();
+    for (auto item : var){
+        qDebug()<<item->type();;
+        if(item->isSelected()){
+            qDebug()<<"dsadas";
+        }
+    }
     m_view->viewport()->update();
 }
 
 void MainWindow::on_shipduenorth_clicked()
 {
-    m_scene->setDictSwitch(true);
+
+    m_scene->setDictSwitch(false);
     m_view->viewport()->update();
 }
 
 void MainWindow::on_shipowndirect_clicked()
 {
-    m_scene->setDictSwitch(false);
+    m_scene->setDictSwitch(true);
+
     m_view->viewport()->update();
 }

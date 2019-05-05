@@ -1,4 +1,4 @@
-#ifndef COMMONHELPER_H
+﻿#ifndef COMMONHELPER_H
 #define COMMONHELPER_H
 
 #include <QObject>

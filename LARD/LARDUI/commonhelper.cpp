@@ -1,4 +1,4 @@
-#include "commonhelper.h"
+﻿#include "commonhelper.h"
 #include <QFile>
 #include <QApplication>
 

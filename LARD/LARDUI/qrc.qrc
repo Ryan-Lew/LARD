@@ -88,5 +88,13 @@
         <file>src/background.jpeg</file>
         <file>src/background_1.jpg</file>
         <file>src/logo.png</file>
+        <file>src/d_click.png</file>
+        <file>src/d_normal.png</file>
+        <file>src/n_click.png</file>
+        <file>src/n_normal.png</file>
+        <file>src/BTN-cancel-click.png</file>
+        <file>src/BTN-cancel-normal.png</file>
+        <file>src/BTN-OK-click.png</file>
+        <file>src/BTN-OK-normal.png</file>
     </qresource>
 </RCC>

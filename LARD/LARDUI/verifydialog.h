@@ -16,7 +16,12 @@ public:
     ~VerifyDialog();
 
 private slots:
-    void on_buttonBox_accepted();
+
+
+
+    void on_verifydialog_ok_clicked();
+
+    void on_verifydialog_cancel_clicked();
 
 private:
     Ui::VerifyDialog *ui;

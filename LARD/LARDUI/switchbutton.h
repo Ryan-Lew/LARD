@@ -1,15 +1,15 @@
-#ifndef SWITCHBUTTON_H
+ï»¿#ifndef SWITCHBUTTON_H
 #define SWITCHBUTTON_H
 
 
 /**
- * ×÷Õß:feiyangqingyun(QQ:517216493) 2016-11-6
- * 1:¿ÉÉèÖÃ¿ª¹Ø°´Å¥µÄÑùÊ½ Ô²½Ç¾ØĞÎ/ÄÚÔ²ĞÎ/ÍâÔ²ĞÎ/Í¼Æ¬
- * 2:¿ÉÉèÖÃÑ¡ÖĞºÍÎ´Ñ¡ÖĞÊ±µÄ±³¾°ÑÕÉ«
- * 3:¿ÉÉèÖÃÑ¡ÖĞºÍÎ´Ñ¡ÖĞÊ±µÄ»¬¿éÑÕÉ«
- * 4:¿ÉÉèÖÃÏÔÊ¾µÄÎÄ±¾
- * 5:¿ÉÉèÖÃ»¬¿éÀë±³¾°µÄ¼ä¸ô
- * 6:¿ÉÉèÖÃÔ²½Ç½Ç¶È
+ * ä½œè€…:feiyangqingyun(QQ:517216493) 2016-11-6
+ * 1:å¯è®¾ç½®å¼€å…³æŒ‰é’®çš„æ ·å¼ åœ†è§’çŸ©å½¢/å†…åœ†å½¢/å¤–åœ†å½¢/å›¾ç‰‡
+ * 2:å¯è®¾ç½®é€‰ä¸­å’Œæœªé€‰ä¸­æ—¶çš„èƒŒæ™¯é¢œè‰²
+ * 3:å¯è®¾ç½®é€‰ä¸­å’Œæœªé€‰ä¸­æ—¶çš„æ»‘å—é¢œè‰²
+ * 4:å¯è®¾ç½®æ˜¾ç¤ºçš„æ–‡æœ¬
+ * 5:å¯è®¾ç½®æ»‘å—ç¦»èƒŒæ™¯çš„é—´éš”
+ * 6:å¯è®¾ç½®åœ†è§’è§’åº¦
  */
 
 #include <QWidget>
@@ -21,10 +21,10 @@ class SwitchButton: public QWidget
     Q_OBJECT
 public:
     enum ButtonStyle {
-        ButtonStyle_Rect = 0,     //Ô²½Ç¾ØĞÎ
-        ButtonStyle_CircleIn = 1, //ÄÚÔ²ĞÎ
-        ButtonStyle_CircleOut = 2,//ÍâÔ²ĞÎ
-        ButtonStyle_Image = 3     //Í¼Æ¬
+        ButtonStyle_Rect = 0,     //åœ†è§’çŸ©å½¢
+        ButtonStyle_CircleIn = 1, //å†…åœ†å½¢
+        ButtonStyle_CircleOut = 2,//å¤–åœ†å½¢
+        ButtonStyle_Image = 3     //å›¾ç‰‡
     };
 
     SwitchButton(QWidget *parent = 0);
@@ -40,31 +40,31 @@ protected:
     void drawImage(QPainter *painter);
 
 private:
-    bool checked;               //ÊÇ·ñÑ¡ÖĞ
-    ButtonStyle buttonStyle;    //¿ª¹Ø°´Å¥ÑùÊ½
+    bool checked;               //æ˜¯å¦é€‰ä¸­
+    ButtonStyle buttonStyle;    //å¼€å…³æŒ‰é’®æ ·å¼
 
-    QColor bgColorOff;          //¹Ø±ÕÊ±±³¾°ÑÕÉ«
-    QColor bgColorOn;           //´ò¿ªÊ±±³¾°ÑÕÉ«
+    QColor bgColorOff;          //å…³é—­æ—¶èƒŒæ™¯é¢œè‰²
+    QColor bgColorOn;           //æ‰“å¼€æ—¶èƒŒæ™¯é¢œè‰²
 
-    QColor sliderColorOff;      //¹Ø±ÕÊ±»¬¿éÑÕÉ«
-    QColor sliderColorOn;       //´ò¿ªÊ±»¬¿éÑÕÉ«
+    QColor sliderColorOff;      //å…³é—­æ—¶æ»‘å—é¢œè‰²
+    QColor sliderColorOn;       //æ‰“å¼€æ—¶æ»‘å—é¢œè‰²
 
-    QColor textColorOff;        //¹Ø±ÕÊ±ÎÄ±¾ÑÕÉ«
-    QColor textColorOn;         //´ò¿ªÊ±ÎÄ±¾ÑÕÉ«
+    QColor textColorOff;        //å…³é—­æ—¶æ–‡æœ¬é¢œè‰²
+    QColor textColorOn;         //æ‰“å¼€æ—¶æ–‡æœ¬é¢œè‰²
 
-    QString textOff;            //¹Ø±ÕÊ±ÏÔÊ¾µÄÎÄ×Ö
-    QString textOn;             //´ò¿ªÊ±ÏÔÊ¾µÄÎÄ×Ö
+    QString textOff;            //å…³é—­æ—¶æ˜¾ç¤ºçš„æ–‡å­—
+    QString textOn;             //æ‰“å¼€æ—¶æ˜¾ç¤ºçš„æ–‡å­—
 
-    QString imageOff;           //¹Ø±ÕÊ±ÏÔÊ¾µÄÍ¼Æ¬
-    QString imageOn;            //´ò¿ªÊ±ÏÔÊ¾µÄÍ¼Æ¬
+    QString imageOff;           //å…³é—­æ—¶æ˜¾ç¤ºçš„å›¾ç‰‡
+    QString imageOn;            //æ‰“å¼€æ—¶æ˜¾ç¤ºçš„å›¾ç‰‡
 
-    int space;                  //»¬¿éÀë±³¾°¼ä¸ô
-    int rectRadius;             //Ô²½Ç½Ç¶È
+    int space;                  //æ»‘å—ç¦»èƒŒæ™¯é—´éš”
+    int rectRadius;             //åœ†è§’è§’åº¦
 
-    int step;                   //Ã¿´ÎÒÆ¶¯µÄ²½³¤
-    int startX;                 //»¬¿é¿ªÊ¼XÖá×ø±ê
-    int endX;                   //»¬¿é½áÊøXÖá×ø±ê
-    QTimer *timer;              //¶¨Ê±Æ÷»æÖÆ
+    int step;                   //æ¯æ¬¡ç§»åŠ¨çš„æ­¥é•¿
+    int startX;                 //æ»‘å—å¼€å§‹Xè½´åæ ‡
+    int endX;                   //æ»‘å—ç»“æŸXè½´åæ ‡
+    QTimer *timer;              //å®šæ—¶å™¨ç»˜åˆ¶
 
 private slots:
     void updateValue();
@@ -134,27 +134,27 @@ public:
     }
 
 public slots:
-    //ÉèÖÃÊÇ·ñÑ¡ÖĞ
+    //è®¾ç½®æ˜¯å¦é€‰ä¸­
     void setChecked(bool checked);
-    //ÉèÖÃ·ç¸ñÑùÊ½
+    //è®¾ç½®é£æ ¼æ ·å¼
     void setButtonStyle(ButtonStyle buttonStyle);
 
-    //ÉèÖÃ±³¾°ÑÕÉ«
+    //è®¾ç½®èƒŒæ™¯é¢œè‰²
     void setBgColor(QColor bgColorOff, QColor bgColorOn);
-    //ÉèÖÃ»¬¿éÑÕÉ«
+    //è®¾ç½®æ»‘å—é¢œè‰²
     void setSliderColor(QColor sliderColorOff, QColor sliderColorOn);
-    //ÉèÖÃÎÄ±¾ÑÕÉ«
+    //è®¾ç½®æ–‡æœ¬é¢œè‰²
     void setTextColor(QColor textColorOff, QColor textColorOn);
 
-    //ÉèÖÃÎÄ±¾
+    //è®¾ç½®æ–‡æœ¬
     void setText(QString textOff, QString textOn);
 
-    //ÉèÖÃ±³¾°Í¼Æ¬
+    //è®¾ç½®èƒŒæ™¯å›¾ç‰‡
     void setImage(QString imageOff, QString imageOn);
 
-    //ÉèÖÃ¼ä¸ô
+    //è®¾ç½®é—´éš”
     void setSpace(int space);
-    //ÉèÖÃÔ²½Ç½Ç¶È
+    //è®¾ç½®åœ†è§’è§’åº¦
     void setRectRadius(int rectRadius);
 
 signals:

@@ -1,12 +1,11 @@
-#include "verifydialog.h"
+﻿#include "verifydialog.h"
 #include "ui_verifydialog.h"
-#include "optiondialog.h"
 
 VerifyDialog::VerifyDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::VerifyDialog)
 {
-    //�ޱ߿�
+    //ÎÞ±ß¿ò
     setWindowFlags(Qt::FramelessWindowHint);
     ui->setupUi(this);
 }
@@ -16,10 +15,17 @@ VerifyDialog::~VerifyDialog()
     delete ui;
 }
 
-void VerifyDialog::on_buttonBox_accepted()
-{
-    OptionDialog dialog;
-    if(dialog.exec() ==QDialog::Accepted){
 
-    }
+
+
+void VerifyDialog::on_verifydialog_ok_clicked()
+{
+    accept();
+
+
+}
+
+void VerifyDialog::on_verifydialog_cancel_clicked()
+{
+    close();
 }

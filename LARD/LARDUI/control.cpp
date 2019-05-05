@@ -1,4 +1,4 @@
-#include "control.h"
+﻿#include "control.h"
 #include "ui_control.h"
 
 Control::Control(QWidget *parent) :

@@ -1,4 +1,4 @@
-#include "switchbutton.h"
+ï»¿#include "switchbutton.h"
 
 #include "qpainter.h"
 #include "qevent.h"
@@ -49,10 +49,10 @@ void SwitchButton::mousePressEvent(QMouseEvent *)
     checked = !checked;
     emit checkedChanged(checked);
 
-    //Ã¿´ÎÒÆ¶¯µÄ²½³¤Îª¿í¶ÈµÄ 50·ÖÖ®Ò»
+    //æ¯æ¬¡ç§»åŠ¨çš„æ­¥é•¿ä¸ºå®½åº¦çš„ 50åˆ†ä¹‹ä¸€
     step = width() / 50;
 
-    //×´Ì¬ÇĞ»»¸Ä±äºó×Ô¶¯¼ÆËãÖÕµã×ø±ê
+    //çŠ¶æ€åˆ‡æ¢æ”¹å˜åè‡ªåŠ¨è®¡ç®—ç»ˆç‚¹åæ ‡
     if (checked) {
         if (buttonStyle == ButtonStyle_Rect) {
             endX = width() - width() / 2;
@@ -70,10 +70,10 @@ void SwitchButton::mousePressEvent(QMouseEvent *)
 
 void SwitchButton::resizeEvent(QResizeEvent *)
 {
-    //Ã¿´ÎÒÆ¶¯µÄ²½³¤Îª¿í¶ÈµÄ 50·ÖÖ®Ò»
+    //æ¯æ¬¡ç§»åŠ¨çš„æ­¥é•¿ä¸ºå®½åº¦çš„ 50åˆ†ä¹‹ä¸€
     step = width() / 50;
 
-    //³ß´ç´óĞ¡¸Ä±äºó×Ô¶¯ÉèÖÃÆğµã×ø±êÎªÖÕµã
+    //å°ºå¯¸å¤§å°æ”¹å˜åè‡ªåŠ¨è®¾ç½®èµ·ç‚¹åæ ‡ä¸ºç»ˆç‚¹
     if (checked) {
         if (buttonStyle == ButtonStyle_Rect) {
             startX = width() - width() / 2;
@@ -91,19 +91,19 @@ void SwitchButton::resizeEvent(QResizeEvent *)
 
 void SwitchButton::paintEvent(QPaintEvent *)
 {
-    //»æÖÆ×¼±¸¹¤×÷,ÆôÓÃ·´¾â³İ
+    //ç»˜åˆ¶å‡†å¤‡å·¥ä½œ,å¯ç”¨åé”¯é½¿
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
     if (buttonStyle == ButtonStyle_Image) {
-        //»æÖÆÍ¼Æ¬
+        //ç»˜åˆ¶å›¾ç‰‡
         drawImage(&painter);
     } else {
-        //»æÖÆ±³¾°
+        //ç»˜åˆ¶èƒŒæ™¯
         drawBg(&painter);
-        //»æÖÆ»¬¿é
+        //ç»˜åˆ¶æ»‘å—
         drawSlider(&painter);
-        //»æÖÆÎÄ×Ö
+        //ç»˜åˆ¶æ–‡å­—
         drawText(&painter);
     }
 }
@@ -123,9 +123,9 @@ void SwitchButton::drawBg(QPainter *painter)
         painter->drawRoundedRect(rect(), rectRadius, rectRadius);
     } else if (buttonStyle == ButtonStyle_CircleIn) {
         QRect rect(0, 0, width(), height());
-        //°ë¾¶Îª¸ß¶ÈµÄÒ»°ë
+        //åŠå¾„ä¸ºé«˜åº¦çš„ä¸€åŠ
         int radius = rect.height() / 2;
-        //Ô²µÄ¿í¶ÈÎª¸ß¶È
+        //åœ†çš„å®½åº¦ä¸ºé«˜åº¦
         int circleWidth = rect.height();
 
         QPainterPath path;
@@ -202,7 +202,7 @@ void SwitchButton::drawImage(QPainter *painter)
         pix = QPixmap(imageOn);
     }
 
-    //×Ô¶¯µÈ±ÈÀıÆ½»¬Ëõ·Å¾ÓÖĞÏÔÊ¾
+    //è‡ªåŠ¨ç­‰æ¯”ä¾‹å¹³æ»‘ç¼©æ”¾å±…ä¸­æ˜¾ç¤º
     int targetWidth = pix.width();
     int targetHeight = pix.height();
     pix = pix.scaled(targetWidth, targetHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation);

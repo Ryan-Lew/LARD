@@ -1,4 +1,4 @@
-#include "qcustomcalendarwidget.h"
+ï»¿#include "qcustomcalendarwidget.h"
 
 #include <QLocale>
 #include <QPainter>
@@ -156,7 +156,7 @@ void QCustomCalendarWidget::initTopWidget()
     hboxLayout->addWidget(m_rightYearBtn);
     topWidget->setLayout(hboxLayout);
 
-    //ÕâÀï¼ûÏÂÍ¼1
+    //è¿™é‡Œè§ä¸‹å›¾1
     QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout *>(layout());
     vBodyLayout->insertWidget(0, topWidget);
 
@@ -178,7 +178,7 @@ void QCustomCalendarWidget::initBottomWidget()
     QHBoxLayout* hboxLayout = new QHBoxLayout;
     hboxLayout->setContentsMargins(12, 0, 12, 0);
     hboxLayout->setSpacing(6);
-    //²»ÊÊÓÃÈ·¶¨È¡Ïû°´Å¥
+    //ä¸é€‚ç”¨ç¡®å®šå–æ¶ˆæŒ‰é’®
     m_ensureBtn = new QPushButton(this);
     m_ensureBtn->setObjectName("CalendarEnsureBtn");
     m_ensureBtn->setFixedSize(40, 22);
@@ -194,7 +194,7 @@ void QCustomCalendarWidget::initBottomWidget()
     hboxLayout->addWidget(m_ensureBtn);
     bottomWidget->setLayout(hboxLayout);
 
-    //ÕâÀï¼ûÏÂÍ¼1
+    //è¿™é‡Œè§ä¸‹å›¾1
     QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout *>(layout());
     vBodyLayout->addWidget(bottomWidget);
 

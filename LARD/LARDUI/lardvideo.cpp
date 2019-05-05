@@ -1,4 +1,4 @@
-#include "lardvideo.h"
+ï»¿#include "lardvideo.h"
 #include "ui_lardvideo.h"
 #include <QPainter>
 #include <QPen>
@@ -29,32 +29,32 @@ void LardVideo::paintEvent(QPaintEvent *event)
 
     QPixmap pix;
     painter.translate(0, 0);
-    pix.load(":/src/background.jpeg");//¼ÓÔØÍ¼Æ¬µØÖ· ¿ÉÒÔÊÇ×ÊÔ´ÎÄ¼ş
-    painter.drawPixmap(0, 0, width(), height(), pix);//»æÖÆÍ¼Æ¬ ºá×ø±ê¡¢×İ×ø±ê¡¢¿í¶È¡¢¸ß¶È
+    pix.load(m_bkSrc);//åŠ è½½å›¾ç‰‡åœ°å€ å¯ä»¥æ˜¯èµ„æºæ–‡ä»¶
+    painter.drawPixmap(0, 0, width(), height(), pix);//ç»˜åˆ¶å›¾ç‰‡ æ¨ªåæ ‡ã€çºµåæ ‡ã€å®½åº¦ã€é«˜åº¦
 
     painter.save();
 
 
     painter.setPen(QColor(0,0,0,200));
     QBrush brush1 = QBrush(QColor(0,0,0,200),Qt::SolidPattern);
-    painter.setBrush(brush1);//ÉèÖÃ»­Ë¢ĞÎÊ½
+    painter.setBrush(brush1);//è®¾ç½®ç”»åˆ·å½¢å¼
     painter.drawRect(QRect(this->width()*4/9,0,this->width()*5/9,40));
 
 
-    QFont font1("ËÎÌå",12,QFont::Bold);
+    QFont font1("å®‹ä½“",12,QFont::Bold);
     painter.setPen(QColor(255,255,255));
     painter.setFont(font1);
-    painter.drawText(QRect(this->width()*4/9,0,this->width()*5/9,40),"16:55:2122NoV 2018 H:317 STBD P:072 T:-2",
+    painter.drawText(QRect(this->width()*4/9,0,this->width()*5/9,40),m_hintInfo,
                      Qt::AlignVCenter|Qt::AlignHCenter);
 
     painter.restore();
 
     //painter.setBrush(Qt::white);
-    //painter.drawRect(0, 0, this->width(), this->height()); //ÏÈ»­³É°×É«
+    //painter.drawRect(0, 0, this->width(), this->height()); //å…ˆç”»æˆç™½è‰²
 
     if (mImage.size().width() <= 0) return;
 
-    ///½«Í¼Ïñ°´±ÈÀıËõ·Å³ÉºÍ´°¿ÚÒ»Ñù´óĞ¡
+    ///å°†å›¾åƒæŒ‰æ¯”ä¾‹ç¼©æ”¾æˆå’Œçª—å£ä¸€æ ·å¤§å°
     QImage img = mImage.scaled(this->size(),Qt::KeepAspectRatio);
 
     int x = this->width() - img.width();
@@ -63,20 +63,20 @@ void LardVideo::paintEvent(QPaintEvent *event)
     x /= 2;
     y /= 2;
 
-    painter.drawImage(QPoint(x,y),img); //»­³öÍ¼Ïñ
+    painter.drawImage(QPoint(x,y),img); //ç”»å‡ºå›¾åƒ
 
     if(open_red==true){
     ///2017.8.12
     QWidget *red_video=new QWidget(this);
     red_video->resize(this->width()/3,this->height()/3);
     ///2017.8.11---lizhen
-    //ÌáÈ¡³öÍ¼ÏñÖĞµÄRÊı¾İ
+    //æå–å‡ºå›¾åƒä¸­çš„Ræ•°æ®
     painter.setBrush(Qt::white);
-    painter.drawRect(0, 0, red_video->width(),red_video->height()); //ÏÈ»­³É°×É«
+    painter.drawRect(0, 0, red_video->width(),red_video->height()); //å…ˆç”»æˆç™½è‰²
 
     if (R_mImage.size().width() <= 0) return;
 
-    ///½«Í¼Ïñ°´±ÈÀıËõ·Å³ÉºÍ´°¿ÚÒ»Ñù´óĞ¡
+    ///å°†å›¾åƒæŒ‰æ¯”ä¾‹ç¼©æ”¾æˆå’Œçª—å£ä¸€æ ·å¤§å°
     QImage R_img = R_mImage.scaled(red_video->size(),Qt::KeepAspectRatio);
 
     int R_x = red_video->width() - R_img.width();
@@ -85,20 +85,20 @@ void LardVideo::paintEvent(QPaintEvent *event)
     R_x /= 2;
     R_y /= 2;
 
-    painter.drawImage(QPoint(R_x,R_y),R_img);  //»­³öÍ¼Ïñ
+    painter.drawImage(QPoint(R_x,R_y),R_img);  //ç”»å‡ºå›¾åƒ
     }
 
     ///2017.8.10---lizhen
-    //»ñÈ¡Í¼ÏñÖĞĞÄµã
+    //è·å–å›¾åƒä¸­å¿ƒç‚¹
     double x0=this->width()/2;
     double y0=this->height()/2;
 
-    //ÔØÌåÆ«ÒÆ½Ç¶È£¬¿É´ÓÉè±¸´¦»ñµÃ
-    double alpha=2;             //ºá¹ö½Çalpha
+    //è½½ä½“åç§»è§’åº¦ï¼Œå¯ä»è®¾å¤‡å¤„è·å¾—
+    double alpha=2;             //æ¨ªæ»šè§’alpha
     int length=60;
 
-    //Éè±¸Æ«ÒÆºóµÄ¡°Ë®Æ½¡±²Î¿¼×ø±ê
-    //ºá¹ö½Ç²úÉú
+    //è®¾å¤‡åç§»åçš„â€œæ°´å¹³â€å‚è€ƒåæ ‡
+    //æ¨ªæ»šè§’äº§ç”Ÿ
     double x_Horizental_right=length*qCos(alpha);
     double y_Horizental_right=-length*qSin(alpha);
     double x_Horizental_left=-length*qCos(alpha);
@@ -108,12 +108,12 @@ void LardVideo::paintEvent(QPaintEvent *event)
     double x_Vertical_down=-length*qSin(alpha);
     double y_Vertical_down=-length*qCos(alpha);
 
-    ///Ë®Æ½²Î¿¼×ø±êÏµ£¬2017.8.7---lizhen
+    ///æ°´å¹³å‚è€ƒåæ ‡ç³»ï¼Œ2017.8.7---lizhen
     painter.setPen(QPen(Qt::blue,1,Qt::DotLine));
     painter.drawLine( x0-40,y0, x0+40,y0);
     painter.drawLine( x0,y0-40, x0,y0+40);
 
-    ///ºá¹öÔË¶¯-Æ«ÒÆ×ø±êÏµ£¬2017.8.7---lizhen
+    ///æ¨ªæ»šè¿åŠ¨-åç§»åæ ‡ç³»ï¼Œ2017.8.7---lizhen
     if(alpha!=0)
     {
         painter.setPen(QPen(Qt::blue,3));
@@ -122,15 +122,35 @@ void LardVideo::paintEvent(QPaintEvent *event)
     }
 }
 
+QString LardVideo::hintInfo() const
+{
+    return m_hintInfo;
+}
+
+void LardVideo::setHintInfo(const QString &hintInfo)
+{
+    m_hintInfo = hintInfo;
+}
+
+QString LardVideo::bkSrc() const
+{
+    return m_bkSrc;
+}
+
+void LardVideo::setBkSrc(const QString &bkSrc)
+{
+    m_bkSrc = bkSrc;
+}
+
 void LardVideo::slotGetOneFrame(QImage img)
 {
     mImage = img;
-    update(); //µ÷ÓÃupdate½«Ö´ĞĞ paintEventº¯Êı
+    update(); //è°ƒç”¨updateå°†æ‰§è¡Œ paintEventå‡½æ•°
 }
-///Ğ¡´°¿ÚÏÔÊ¾
+///å°çª—å£æ˜¾ç¤º
 void LardVideo::slotGetRFrame(QImage img)
 {
     R_mImage = img;
-    update(); //µ÷ÓÃupdate½«Ö´ĞĞ paintEventº¯Êı
+    update(); //è°ƒç”¨updateå°†æ‰§è¡Œ paintEventå‡½æ•°
 }
 

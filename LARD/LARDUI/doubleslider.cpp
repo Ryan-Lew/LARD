@@ -1,4 +1,4 @@
-#include "doubleslider.h"
+﻿#include "doubleslider.h"
 #include <QPainter>
 #include <QKeyEvent>
 #include <QMouseEvent>

@@ -1,4 +1,4 @@
-#ifndef LARDVIDEO_H
+ï»¿#ifndef LARDVIDEO_H
 #define LARDVIDEO_H
 
 #include <QWidget>
@@ -14,6 +14,12 @@ class LardVideo : public QWidget
 public:
     explicit LardVideo(QWidget *parent = 0);
     ~LardVideo();
+    QString bkSrc() const;
+    void setBkSrc(const QString &bkSrc);
+
+    QString hintInfo() const;
+    void setHintInfo(const QString &hintInfo);
+
 protected:
     void paintEvent(QPaintEvent *event);
 
@@ -21,13 +27,14 @@ private:
     Ui::LardVideo *ui;
 
 
-    VideoPlayer *mPlayer; //²¥·ÅÏß³Ì
+    VideoPlayer *mPlayer; //æ’­æ”¾çº¿ç¨‹
 
-    QImage mImage; //¼ÇÂ¼µ±Ç°µÄÍ¼Ïñ
+    QImage mImage; //è®°å½•å½“å‰çš„å›¾åƒ
     QImage R_mImage;
 
     QString url;
-
+    QString m_bkSrc = "";
+    QString m_hintInfo = "";
     bool open_red=false;
 
 private slots:

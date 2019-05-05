@@ -1,4 +1,4 @@
-#ifndef VIDEOTABLEVIEW_H
+﻿#ifndef VIDEOTABLEVIEW_H
 #define VIDEOTABLEVIEW_H
 
 #include <QAbstractTableModel>

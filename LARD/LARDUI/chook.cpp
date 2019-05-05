@@ -1,9 +1,9 @@
-#include "chook.h"
+ï»¿#include "chook.h"
 
 #include <QSettings>
 
 
-//ÔÚ×¢²á±í¸ÃÄ¿Â¼ÏÂÔö¼ÓĞÂÄÚÈİ
+//åœ¨æ³¨å†Œè¡¨è¯¥ç›®å½•ä¸‹å¢åŠ æ–°å†…å®¹
 #define TASKMANAGERSystem "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System"
 #define TASKMANAGERExplorer "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
 
@@ -11,12 +11,12 @@ HHOOK keyHook = NULL;
 HHOOK mouseHook = NULL;
 
 
-//¼üÅÌ¹³×Ó¹ı³Ì
+//é”®ç›˜é’©å­è¿‡ç¨‹
 LRESULT CALLBACK keyProc(int nCode,WPARAM wParam,LPARAM lParam )
 {
-    //ÔÚWH_KEYBOARD_LLÄ£Ê½ÏÂlParam ÊÇÖ¸ÏòKBDLLHOOKSTRUCTÀàĞÍµØÖ·
+    //åœ¨WH_KEYBOARD_LLæ¨¡å¼ä¸‹lParam æ˜¯æŒ‡å‘KBDLLHOOKSTRUCTç±»å‹åœ°å€
     KBDLLHOOKSTRUCT *pkbhs = (KBDLLHOOKSTRUCT *) lParam;
-    //Èç¹ûnCodeµÈÓÚHC_ACTIONÔò´¦Àí¸ÃÏûÏ¢£¬Èç¹ûĞ¡ÓÚ0£¬Ôò¹³×Ó×Ó³Ì¾Í±ØĞë½«¸ÃÏûÏ¢´«µİ¸ø CallNextHookEx
+    //å¦‚æœnCodeç­‰äºHC_ACTIONåˆ™å¤„ç†è¯¥æ¶ˆæ¯ï¼Œå¦‚æœå°äº0ï¼Œåˆ™é’©å­å­ç¨‹å°±å¿…é¡»å°†è¯¥æ¶ˆæ¯ä¼ é€’ç»™ CallNextHookEx
     if(nCode == HC_ACTION)
     {
         if((pkbhs->vkCode == VK_ESCAPE && GetAsyncKeyState(VK_CONTROL)& 0x8000 && GetAsyncKeyState(VK_SHIFT)&0x8000)|| //"Ctrl+Shift+Esc"
@@ -26,7 +26,7 @@ LRESULT CALLBACK keyProc(int nCode,WPARAM wParam,LPARAM lParam )
             (pkbhs->vkCode == VK_LWIN || pkbhs->vkCode == VK_RWIN )||	// "LWIN/RWIN"
             (pkbhs->vkCode == VK_F4 && pkbhs->flags & LLKHF_ALTDOWN )) //"Alt+F4"
         {
-            return 1;//·µ»Ø1±íÊ¾½ØÈ¡ÏûÏ¢²»ÔÙ´«µİ,·µ»Ø0±íÊ¾²»×÷´¦Àí,ÏûÏ¢¼ÌĞø´«µİ
+            return 1;//è¿”å›1è¡¨ç¤ºæˆªå–æ¶ˆæ¯ä¸å†ä¼ é€’,è¿”å›0è¡¨ç¤ºä¸ä½œå¤„ç†,æ¶ˆæ¯ç»§ç»­ä¼ é€’
         }
 
         // 		if(pkbhs->vkCode == VK_F12)
@@ -37,7 +37,7 @@ LRESULT CALLBACK keyProc(int nCode,WPARAM wParam,LPARAM lParam )
     }
     return CallNextHookEx(keyHook, nCode, wParam, lParam);
 }
-//Êó±ê¹³×Ó¹ı³Ì
+//é¼ æ ‡é’©å­è¿‡ç¨‹
 LRESULT CALLBACK mouseProc(int nCode,WPARAM wParam,LPARAM lParam )
 {
 
@@ -56,15 +56,15 @@ CHook::~CHook()
 {
 
 }
-//°²×°¹³×Ó,µ÷ÓÃ¸Ãº¯Êı¼´°²×°¹³×Ó
+//å®‰è£…é’©å­,è°ƒç”¨è¯¥å‡½æ•°å³å®‰è£…é’©å­
 void CHook::hook(bool flag)
 {
     if (flag)
     {
-        //ÕâÁ½¸öµ×²ã¹³×Ó,²»ÒªDLL¾Í¿ÉÒÔÈ«¾Ö
-        //µ×²ã¼üÅÌ¹³×Ó
+        //è¿™ä¸¤ä¸ªåº•å±‚é’©å­,ä¸è¦DLLå°±å¯ä»¥å…¨å±€
+        //åº•å±‚é”®ç›˜é’©å­
         keyHook =SetWindowsHookEx( WH_KEYBOARD_LL,keyProc,GetModuleHandle(NULL),0);
-        //µ×²ãÊó±ê¹³×Ó
+        //åº•å±‚é¼ æ ‡é’©å­
         //    mouseHook =SetWindowsHookEx( WH_MOUSE_LL,mouseProc,GetModuleHandle(NULL),0);
     }
     else
@@ -74,25 +74,25 @@ void CHook::hook(bool flag)
     }
 }
 
-//Ìí¼Ó×¢²áÆÁ±ÎCtrl+Alt+del
+//æ·»åŠ æ³¨å†Œå±è”½Ctrl+Alt+del
 void CHook::enableTaskManager(bool flag)
 {
-    // ÆÁ±Îctrl + alt +del ĞèÒªĞŞ¸Ä×¢²á±íµÄÖµ£¬ È¡µÃ¹ÜÀíÔ±È¨ÏŞ£¬ ¹Ø±Õ360µÈÉ±¶¾Èí¼ş
+    // å±è”½ctrl + alt +del éœ€è¦ä¿®æ”¹æ³¨å†Œè¡¨çš„å€¼ï¼Œ å–å¾—ç®¡ç†å‘˜æƒé™ï¼Œ å…³é—­360ç­‰æ€æ¯’è½¯ä»¶
     int value = flag ? 0x00000001 : 0x00000000;
     QSettings *settings = new QSettings(TASKMANAGERSystem, QSettings::NativeFormat);
-    settings->setValue("DisableTaskMgr", value); //ÈÎÎñ¹ÜÀíÆ÷
-    settings->setValue("DisableChangePassword", value); //¸ü¸ÄÃÜÂë
-    settings->setValue("DisableLockWorkstation", value); //Ëø¶¨¼ÆËã»ú
-    settings->setValue("DisableSwitchUserOption", value); //ÇĞ»»ÓÃ»§
+    settings->setValue("DisableTaskMgr", value); //ä»»åŠ¡ç®¡ç†å™¨
+    settings->setValue("DisableChangePassword", value); //æ›´æ”¹å¯†ç 
+    settings->setValue("DisableLockWorkstation", value); //é”å®šè®¡ç®—æœº
+    settings->setValue("DisableSwitchUserOption", value); //åˆ‡æ¢ç”¨æˆ·
 
     QSettings *settings2 = new QSettings(TASKMANAGERExplorer, QSettings::NativeFormat);
-    settings2->setValue("NoLogOff", value); //×¢Ïú
+    settings2->setValue("NoLogOff", value); //æ³¨é”€
 
     delete settings;
     delete settings2;
 }
 
-//ÆÁ±ÎÈÎÎñÀ¸
+//å±è”½ä»»åŠ¡æ 
 void CHook::showTaskWindow(bool flag)
 {
     if(flag)

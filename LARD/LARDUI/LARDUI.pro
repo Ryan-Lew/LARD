@@ -34,25 +34,6 @@ SOURCES += \
     commonhelper.cpp \
     qcustomcalendarwidget.cpp \
     switchbutton.cpp \
-    radar/BitStream.cpp \
-    radar/ChangeCoordinate.cpp \
-    radar/Clock.cpp \
-    radar/Graphic.cpp \
-    radar/Label.cpp \
-    radar/OutputDataForTest.cpp \
-    radar/Plot.cpp \
-    radar/Point.cpp \
-    radar/Radar.cpp \
-    radar/RingBuffer.cpp \
-    radar/Scene2D.cpp \
-    radar/Semaphore.cpp \
-    radar/Thread.cpp \
-    radar/Utility.cpp \
-    radar/View2D.cpp \
-    radar/XInterface.cpp \
-    radar/XYScene2D.cpp \
-    radar/XYView2D.cpp \
-    radar/Target.cpp \
     lardvideo.cpp \
     videoplayer.cpp \
     videotableviewmodel.cpp \
@@ -64,7 +45,8 @@ SOURCES += \
     radarscene.cpp \
     shipitem.cpp \
     enemyshipitem.cpp \
-    verifydialog.cpp
+    verifydialog.cpp \
+    splashscreen.cpp
 
 
 HEADERS += \
@@ -75,26 +57,6 @@ HEADERS += \
     commonhelper.h \
     qcustomcalendarwidget.h \
     switchbutton.h \
-    radar/BitStream.h \
-    radar/ChangeCoordinate.h \
-    radar/Clock.h \
-    radar/Graphic.h \
-    radar/Label.h \
-    radar/OutputDataForTest.h \
-    radar/Plot.h \
-    radar/Point.h \
-    radar/Radar.h \
-    radar/RingBuffer.h \
-    radar/Scene2D.h \
-    radar/Semaphore.h \
-    radar/Thread.h \
-    radar/Utility.h \
-    radar/View2D.h \
-    radar/XInterface.h \
-    radar/XYScene2D.h \
-    radar/XYView2D.h \
-    radar/Singleton.h \
-    radar/Target.h \
     lardvideo.h \
     videoplayer.h \
     videotableviewmodel.h \
@@ -106,7 +68,8 @@ HEADERS += \
     radarscene.h \
     shipitem.h \
     enemyshipitem.h \
-    verifydialog.h
+    verifydialog.h \
+    splashscreen.h
 
 
 FORMS += \
@@ -134,3 +97,6 @@ LIBS += $$PWD/thirdpart/dev/lib/avcodec.lib \
         $$PWD/thirdpart/dev/lib/postproc.lib \
         $$PWD/thirdpart/dev/lib/swresample.lib \
         $$PWD/thirdpart/dev/lib/swscale.lib
+
+DISTFILES += \
+    src/background_1.jpg

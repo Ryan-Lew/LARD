@@ -8,12 +8,18 @@
 
 ShipItem::ShipItem(QGraphicsItem *parent):QGraphicsPathItem(parent)
 {
-
+    this->setAcceptedMouseButtons(Qt::LeftButton);
+    setFlag(QGraphicsItem::ItemIsSelectable);
 }
 
 QRectF ShipItem::boundingRect() const
 {
     return QRectF(-m_width/2.0,-m_height/2.0,m_width,m_height);
+}
+
+void ShipItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    qDebug()<<"ShipItem::mousePressEvent";
 }
 
 bool ShipItem::contains(const QPointF &point) const
@@ -28,22 +34,46 @@ void ShipItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 
     countShip();
     painter->setPen(QPen(Qt::white,1));
-    const static QPointF polygon[9] = {
-        rotaryAngle(m_centerLeftShipPoint),
-        rotaryAngle(m_centerRightShipPoint),
-        rotaryAngle(m_headRightShipPoint),
-        rotaryAngle(m_headShipPoint),
-        rotaryAngle(m_headLeftShipPoint),
-        rotaryAngle(m_centerLeftShipPoint),
-        rotaryAngle(m_tailLeftShipPoint),
-        rotaryAngle(m_tailRightShipPoint),
-        rotaryAngle(m_centerRightShipPoint)
-    };
+    if(m_dueNorth){
+        const static QPointF polygon[9] = {
+            (m_centerLeftShipPoint),
+            (m_centerRightShipPoint),
+            (m_headRightShipPoint),
+            (m_headShipPoint),
+            (m_headLeftShipPoint),
+            (m_centerLeftShipPoint),
+            (m_tailLeftShipPoint),
+            (m_tailRightShipPoint),
+            (m_centerRightShipPoint)
+        };
+        m_localHeadShipPoint = m_headLeftShipPoint;
+        painter->drawPolygon(polygon, 9);
 
-    painter->drawPolygon(polygon, 9);
+        //gradientOtherArc(painter,m_seaMileLength, 90  - m_rightAngle+45/2.0 ,-45,(m_centerRightShipPoint),QColor(220,20,60));
+        //gradientOtherArc(painter,m_seaMileLength, 90  + m_leftAngle-45/2.0 ,45,(m_centerLeftShipPoint),QColor(0,255,255));
 
-    gradientArc(painter,m_seaMileLength, 90 -m_angle - m_rightAngle ,-m_dxAngle,rotaryAngle(m_centerRightShipPoint),QColor(220,20,60));
-    gradientArc(painter,m_seaMileLength, 90 -m_angle + m_leftAngle ,m_dxAngle,rotaryAngle(m_centerLeftShipPoint),QColor(0,255,255));
+        gradientArc(painter,m_seaMileLength, 90  - m_rightAngle ,-m_dxAngle,(m_centerRightShipPoint),QColor(220,20,60));
+        gradientArc(painter,m_seaMileLength, 90  + m_leftAngle ,m_dxAngle,(m_centerLeftShipPoint),QColor(0,255,255));
+    }else{
+        const static QPointF polygon[9] = {
+            rotaryAngle(m_centerLeftShipPoint),
+            rotaryAngle(m_centerRightShipPoint),
+            rotaryAngle(m_headRightShipPoint),
+            rotaryAngle(m_headShipPoint),
+            rotaryAngle(m_headLeftShipPoint),
+            rotaryAngle(m_centerLeftShipPoint),
+            rotaryAngle(m_tailLeftShipPoint),
+            rotaryAngle(m_tailRightShipPoint),
+            rotaryAngle(m_centerRightShipPoint)
+        };
+        m_localHeadShipPoint =rotaryAngle(m_headLeftShipPoint);
+        painter->drawPolygon(polygon, 9);
+        //gradientOtherArc(painter,m_seaMileLength, 90 -m_angle - m_rightAngle ,-45,rotaryAngle(m_centerRightShipPoint),QColor(220,20,60));
+        //gradientOtherArc(painter,m_seaMileLength, 90 -m_angle + m_leftAngle ,45,rotaryAngle(m_centerLeftShipPoint),QColor(0,255,255));
+        gradientArc(painter,m_seaMileLength, 90 -m_angle - m_rightAngle ,-m_dxAngle,rotaryAngle(m_centerRightShipPoint),QColor(220,20,60));
+        gradientArc(painter,m_seaMileLength, 90 -m_angle + m_leftAngle ,m_dxAngle,rotaryAngle(m_centerLeftShipPoint),QColor(0,255,255));
+    }
+
 }
 
 QPainterPath ShipItem::shape() const
@@ -83,6 +113,54 @@ void ShipItem::setFixSeaMile(float fixSeaMile)
     m_fixSeaMile = fixSeaMile;
     m_seaMileLength = m_fixSeaMile*m_seaMile;
 
+}
+
+bool ShipItem::dueNorth() const
+{
+    return m_dueNorth;
+}
+
+void ShipItem::setDueNorth(bool dueNorth)
+{
+    m_dueNorth = dueNorth;
+}
+
+float ShipItem::angle() const
+{
+    return m_angle;
+}
+
+void ShipItem::setAngle(float angle)
+{
+    m_angle = angle;
+}
+
+QPointF ShipItem::localHeadShipPoint() const
+{
+    return m_localHeadShipPoint;
+}
+
+void ShipItem::setLocalHeadShipPoint(const QPointF &localHeadShipPoint)
+{
+    m_localHeadShipPoint = localHeadShipPoint;
+}
+
+
+
+void ShipItem::updateLeftAngle(float leftAngle)
+{
+    m_leftAngle = leftAngle + m_dxAngle/2;
+    qDebug()<<m_leftAngle;
+}
+
+
+
+
+
+void ShipItem::updateRightAngle(float rightAngle)
+{
+    m_rightAngle = rightAngle + m_dxAngle/2;
+    qDebug()<<m_rightAngle;
 }
 
 void ShipItem::countShip()
@@ -130,7 +208,25 @@ void ShipItem::gradientArc(QPainter *painter, int radius, int startAngle, int an
     QRectF rect(centerPt.x()-radius,centerPt.y()-radius ,2*radius,2*radius);
 
     painter->setPen(QPen(color,1));
+    float rad = qDegreesToRadians(static_cast<float>(angleLength - startAngle));
+    QRadialGradient radialGradient(centerPt,100);
+    radialGradient.setColorAt(0,QColor(60,60,60,140));
+    radialGradient.setColorAt(1,QColor(200,200,200,140));
+    painter->setBrush(QBrush(radialGradient));
 
+    painter->drawPie(rect, startAngle * 16, angleLength * 16);
+}
+
+void ShipItem::gradientOtherArc(QPainter *painter, int radius, int startAngle, int angleLength, QPointF centerPt, QColor color)
+{
+    QRectF rect(centerPt.x()-radius,centerPt.y()-radius ,2*radius,2*radius);
+
+
+    float rad = qDegreesToRadians(static_cast<float>(angleLength - startAngle));
+    QRadialGradient radialGradient(centerPt,100);
+    radialGradient.setColorAt(0,QColor(60,60,60,140));
+    radialGradient.setColorAt(1,QColor(200,200,200,140));
+    painter->setBrush(QBrush(radialGradient));
 
     painter->drawPie(rect, startAngle * 16, angleLength * 16);
 }

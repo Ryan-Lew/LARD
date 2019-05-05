@@ -1,4 +1,4 @@
-#include "videotableviewmodel.h"
+﻿#include "videotableviewmodel.h"
 
 #include <QDebug>
 VideoTableViewModel::VideoTableViewModel(QObject *parent)
