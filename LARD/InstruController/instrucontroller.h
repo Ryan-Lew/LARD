@@ -48,6 +48,7 @@ private:
     boost::shared_ptr<Cloud>    m_pcloud;
     boost::shared_ptr<Radar>    m_pradar;
     boost::shared_ptr<QTimer>  m_pradartimer;
+
 };
 
 #endif // INSTRUCONTROLLER_H

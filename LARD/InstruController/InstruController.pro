@@ -28,7 +28,6 @@ SOURCES += \
         instrucontroller.cpp \
     communication/serial422.cpp \
     communication/serialcombase.cpp \
-#    communication/serialnmea.cpp \
     radar.cpp \
     compasser.cpp \
     consolecontrol.cpp \
@@ -39,7 +38,6 @@ HEADERS += \
         instrucontroller_global.h \ 
     communication/serial422.h \
     communication/serialcombase.h \
-#    communication/serialnmea.h \
     ../../inc/commonstruct.h \
     radar.h \
     compasser.h \
