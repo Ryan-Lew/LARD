@@ -16,7 +16,7 @@ class INSTRUCONTROLLERSHARED_EXPORT InstruController:public QObject
 public:
     InstruController();
 
-public:
+public slots:
     //////////////////////转台控制///////////////////////////////
     void    onSetSpeed(int speed);
     void    onMoveLeft();
@@ -35,7 +35,6 @@ public:
     void    MoveToZero();
 
     //////////////////////雷达目标///////////////////////////////////
-public slots:
     void    onRadarTimeout();
 
 signals:
