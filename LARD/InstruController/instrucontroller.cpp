@@ -1,6 +1,7 @@
 #include "instrucontroller.h"
 #include "cloud.h"
 #include "radar.h"
+#include "compasser.h"
 
 InstruController::InstruController()
 {
@@ -79,12 +80,26 @@ void InstruController::MoveToZero()
 
 void InstruController::onRadarTimeout()
 {
-    QVector<boost::shared_ptr<TargetInfo> > vectargets = m_pradar->GetRadarInfo();
-    for(auto &tmp:vectargets)
-    {
-        boost::shared_ptr<TargetInfo> ptarget  = tmp;
-        emit RadarTargetReport(ptarget);
-    }
+//    QVector<boost::shared_ptr<TargetInfo> > vectargets = m_pradar->GetRadarInfo();
+//    for(auto &tmp:vectargets)
+//    {
+//        boost::shared_ptr<TargetInfo> ptarget  = tmp;
+//        emit RadarTargetReport(ptarget);
+//    }
+    boost::shared_ptr<TargetInfo> ptarget = boost::make_shared<TargetInfo>();
+    ptarget->batch = rand()%100;
+    ptarget->speed = rand()%30;
+    ptarget->bearing = rand()%300;
+    ptarget->bearingflag = Flag::enum_Abs;
+    ptarget->distance = rand()%8;
+    ptarget->course = rand()%300;
+    ptarget->courseflag = Flag::enum_Abs;
+    emit RadarTargetReport(ptarget);
+}
+
+float InstruController::GetShipDirection()
+{
+    return m_pcompasser->GetShipDirection();
 }
 
 
@@ -101,5 +116,7 @@ void InstruController::init()
     m_pradar = boost::make_shared<Radar>();
     m_pradartimer = boost::make_shared<QTimer>();
     connect(m_pradartimer.get(), SIGNAL(timeout()), this , SLOT(onRadarTimeout()));
+    m_pradartimer->start(1000*10);
 
+    m_pcompasser = boost::make_shared<Compasser>(cfg);
 }

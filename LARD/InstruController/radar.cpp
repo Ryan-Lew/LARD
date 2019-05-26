@@ -4,6 +4,7 @@
 #include <QCoreApplication>
 #include "boost/property_tree/ptree.hpp"
 #include "boost/property_tree/json_parser.hpp"
+//#include "gpio.h"
 
 Radar::Radar()
 {
@@ -20,6 +21,8 @@ void Radar::init()
     m_config->commcfg.baurate = ptr.get<int>("TTM.baudrate");
     m_config->commcfg.databit = ptr.get<int>("TTM.databit");
     m_pcomm = make_shared<Serial422>(m_config->commcfg);
+
+//    IOCTL_GPIO_READ_PINS();
 }
 
 QVector<boost::shared_ptr<TargetInfo> > Radar::GetRadarInfo()

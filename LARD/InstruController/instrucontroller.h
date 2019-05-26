@@ -8,7 +8,7 @@
 class Cloud;
 class Radar;
 class TargetInfo;
-
+class Compasser;
 class INSTRUCONTROLLERSHARED_EXPORT InstruController:public QObject
 {
     Q_OBJECT
@@ -37,6 +37,9 @@ public slots:
     //////////////////////雷达目标///////////////////////////////////
     void    onRadarTimeout();
 
+    //////////////////////罗经仪////////////////////////////////////////
+    float    GetShipDirection();
+
 signals:
     void    RadarTargetReport(boost::shared_ptr<TargetInfo> target); //雷达目标上报
 
@@ -46,7 +49,8 @@ private:
 private:
     boost::shared_ptr<Cloud>    m_pcloud;
     boost::shared_ptr<Radar>    m_pradar;
-    boost::shared_ptr<QTimer>  m_pradartimer;
+    boost::shared_ptr<QTimer>   m_pradartimer;
+    boost::shared_ptr<Compasser> m_pcompasser;
 
 };
 
